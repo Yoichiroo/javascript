@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <button onclick="sorteio()">Sorteio</button>
+        <button onclick="sorteio2(10)">Sorteio2</button>
+        <p id="res"></p>
+    </main>
+</body>
+
+<script>
+    let vetor = []
+
+    function show() {
+        res.innerHTML = ""
+        for (p = 0; p < vetor.length; p++) {
+            res.innerHTML += `[${vetor[p]}] `
+        }
+    }
+
+    function sorteio() {
+        vetor = []
+        for (let pos = 0; pos < 10; pos++) {
+            let num = Math.round(Math.random() * 60)
+            vetor.push(num)
+        }
+
+        show()
+    }
+
+
+    function sorteio2(total) {
+        let num = 0 
+        vetor = []
+        for (let c = 0; c < total; c++) {
+            while (true) { 
+                num = Math.floor(Math.random() * 60)
+                if (vetor.indexOf(num) == -1) {
+                    break
+                } 
+            }
+            vetor.push(num)
+        }
+        show()
+    }
+
+</script>
+</html>
