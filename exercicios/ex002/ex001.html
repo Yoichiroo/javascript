@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com o DOM</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Poppins:wght@400;500&display=swap');
+        body {
+            background-color: rgb(62, 123, 214);
+            color: white;
+            font-family: 'Poppins';
+            font-size: 1.2em;
+        }
+
+        p {
+            font-family: 'Inter Tight';
+        }
+    </style>
+</head>
+<body>
+    <h1>Estudos com o DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JS</p>
+    <div id="msg">Clique em mim!</div>
+
+    <script>
+        let corpo = window.document.body
+        let p1 = document.getElementsByTagName('p')[1]
+        let d = document.getElementById('msg')
+
+        
+        corpo.style.backgroundColor = 'black'
+        d.style.backgroundColor = 'white'
+        d.style.color = 'black'
+        d.innerText = 'Estou aguardando...'
+    </script>
+</body>
+</html>
