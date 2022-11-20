@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Poppins:wght@400;500&display=swap');
+        body {
+            font-family: 'Poppins';
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificação de Nacionalidade</h1>
+    <fieldset>
+        <legend>País</legend>
+        <input type="text" name="txtpais" id="txtpais">
+        <input type="button" value="Verificar" onclick="verificacao()">
+        <div id="res"></div>
+    </fieldset>
+    <script>
+        function verificacao() {
+            var tpaís = document.getElementById('txtpais')
+            var país = tpaís.value
+            var resultado = document.querySelector('div#res')
+            if(país == "Brasil") {
+                resultado.innerHTML = `<p>Vivendo no(a) <strong>${país}</strong>, você é <strong>Brasileiro.</strong></p>`
+            } else {
+                resultado.innerHTML = `<p>Vivendo no(a) <strong>${país}</strong>, você é <strong>Estrangeiro.</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
