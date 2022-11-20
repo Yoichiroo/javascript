@@ -7,7 +7,6 @@
     <title>Somando números</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Poppins:wght@400;500&display=swap');
-        @charset "UTF-8";
         
         body, input {
             font-family: 'Poppins';
@@ -30,11 +29,11 @@
 
     <script>
         function somar() {
-            var tn1 = document.getElementById('txtn1')
+            var tn1 = document.getElementById('txtn1') //Pegou o valor dentro do input
             var tn2 = document.querySelector('input#txtn2')
             var res = document.getElementById('resultado')
             
-            var n1 = Number(tn1.value) 
+            var n1 = Number(tn1.value) //Transformou em número
             var n2 = Number(tn2.value)
             var s = n1 * n2
             res.innerHTML = `A multiplicação de <strong>${n1}</strong> e <strong>${n2}</strong> é <strong>${s}</strong>`  
