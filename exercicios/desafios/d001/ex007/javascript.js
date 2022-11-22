@@ -42,8 +42,7 @@ function verificar() {
             } else {
                 // IDOSO
                 img.setAttribute('src', 'idoso-f.jpg')
-            }
-            
+            }    
         }
         res.innerHTML = `Detectamos <strong>${genero}</strong> com <strong>${idade}</strong> anos.`
         res.style.textAlign = 'center'
@@ -51,5 +50,4 @@ function verificar() {
         img.style.width = '250px'
         img.style.borderRadius = '50%'
     }
-
 }
