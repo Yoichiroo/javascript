@@ -1,5 +1,5 @@
-let nome = ["Pedro", "João"]
-let idade = ["16"]
+let nome = []
+let idade = []
 show()
 
 function show() {
@@ -44,7 +44,7 @@ function procurar() {
     let n = prompt("Que pessoa você está procurando?")
     if (temnalista(n)) {
         let pos = nome.indexOf(n)
-        alert(`${nome[pos]}, ${idade[pos]} anos.`)
+        alert(`${nome[pos]}, ${idade} anos.`)
     }
 }
 

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Poppins:wght@400;500&family=Unna:wght@400;700&display=swap');
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins';
+}
+
+body {
+    background-color: rgb(59, 105, 165);
+}
+
+main {
+    background-color: white;
+    margin: 20px auto;
+    width: 600px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.267);
+}
+
+button {
+    border: none;
+    color: white;
+    background-color: rgb(39, 15, 128);
+    width: 150px;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 50px;
+}
+button:hover {
+    background-color: rgb(68, 44, 155);
+}
