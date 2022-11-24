@@ -6,7 +6,7 @@ show()
 function add() {
     let item = Number(prompt("O que você quer adicionar?"))
     if (temnalista(item)) {
-        alert(`Você já tem ${item} na lista!`)
+        alert(`Você já tem ${item} na lista!`) 
     } else {
         vetor.push(item)
         show()
@@ -75,12 +75,12 @@ function imparepar() {
     let impar = 0
     for (let pos = 0; pos < vetor.length; pos++) {
         if (vetor[pos] % 2 == 1) {
-            res.innerHTML += `${vetor[pos]} é IMPAR.`
+            res.innerHTML += `${vetor[pos]} é <strong>IMPAR.</strong> <br>`
             impar++
         } else {
-            res.innerHTML += `${vetor[pos]} é PAR.`
+            res.innerHTML += `${vetor[pos]} é <strong>PAR.</strong> <br>`
             par++
         }
-        res.innerHTML = `Existem, neste vetor, <strong>${impar}</strong> números impar(es) e <strong>${par}</strong> números par(es).`
     }
+    res.innerHTML += `<br> Existem, neste vetor, <strong>${impar}</strong> números impar(es) e <strong>${par}</strong> números par(es).`
 }
