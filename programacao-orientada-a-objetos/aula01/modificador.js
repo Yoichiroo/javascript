@@ -1,33 +1,39 @@
-function fnCapitalizar(vetor) {
-    let modificado = []
-    for (let c in vetor) {
-        let letraInicial = vetor[c].charAt(0).toUpperCase()
-        let restoTexto = vetor[c].slice(1)
-        let resultado = letraInicial + restoTexto
-        modificado[c] = resultado
+function fnCapitalizar(colecao, attr){
+    if (colecao.length > 0) {
+        if (typeof colecao[0] == 'object' && attr) {
+            colecao.map(item => item[attr] = item[attr].charAt(0).toUpperCase() + item[attr].slice(1));
+        }else {
+            colecao.map(item => item = item.charAt(0).toUpperCase() + item.slice(1));
+        }
+        
+        return colecao;
     }
-    return modificado 
 }
 
-function fnOrdenar(vetor) {
-    return vetor.sort(function(a, b){
-        return a.localeCompare(b)
-    })
+function fnCaixaAlta(colecao, attr){
+    if (colecao.length > 0) {
+        if (typeof colecao[0] == 'object' && attr) {
+            colecao.map(item => item[attr] = item[attr].toUpperCase());
+        }else {
+            colecao.map(item => item = item.toUpperCase());
+        }
+        
+        return colecao;
+    }
 }
 
-function fnCaixaAlta(vetor) {
-    let modificado = []
-    for (let c in vetor) {
-        modificado[c] = vetor[c].toUpperCase()
-    }
-    modificado.sort(function(a,b){
-        return a.localeCompare(b)
-    })
-    return modificado
+function fnOrdenar(colecao, attr){    
+    return attr ?
+        colecao.sort(function(a,b){
+            return typeof a[attr] == 'number' ? a[attr] - b[attr] : a[attr].localeCompare(b[attr])
+        }):
+        colecao.sort(function(a,b){
+            return typeof a == 'number' ? a - b : a.localeCompare(b)
+        });
 }
 
 export default {
     capitalizar: fnCapitalizar,
     ordenar: fnOrdenar,
     caixaAlta: fnCaixaAlta
-}
+};
