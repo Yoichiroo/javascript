@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação de data</title>
+</head>
+<body>
+
+
+    <script>
+
+        let date = new Date() 
+
+        let newDate = new Date() //Ano, Mês, Dia, Hora, Minuto, Segundo, Milisegundo
+        
+        /*
+        newDate.setDate(date.getDate()+2) 
+        setDate configura o dia
+        */
+
+        let dia = newDate.getDate()
+        let diaSem = newDate.getDay()
+        let mes = newDate.getMonth()
+        let ano = newDate.getFullYear()
+
+        let horas = newDate.getHours()
+        let minutos = newDate.getMinutes()
+        let segundos = newDate.getSeconds()
+
+        let meses = ["Janeiro", "Fevereiro", "Março", "Abril,", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+        let semanas = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
+        document.write(semanas[diaSem] + ', ' + dia + ' de ' + meses[mes] + ' de ' + ano + '<br>')
+        document.write(horas + ":" + minutos + ":" + segundos)
+
+    </script>
+</body>
+</html>

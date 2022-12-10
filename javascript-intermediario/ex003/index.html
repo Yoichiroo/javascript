@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções - Criando suas próprias funções</title>
+</head>
+<body>
+    <script>
+        function escreve() {
+            document.write('Curso de JavaScript - CFB Cursos <br>')
+        }
+        escreve()
+        
+        function soma(n1, n2) {
+            return n1 + n2
+        } //USANDO O MÉTODO RETURN
+        let res = soma(4,4)
+        document.write(res + "<br>") 
+        
+        function soma2(n1, n2) {
+            let res = n1 + n2
+            document.write(n1 + " + " + n2 + " = " + res +"<br>")
+        } // USANDO O MÉTODO DA VARIÁVEL
+        soma2(10, 2)
+        
+        let numeros = [1, 2, 3]
+
+        function media(num) {
+            let qtd = num.length
+            let soma = 0
+            for (let i = 0; i < qtd; i++) {
+                soma += num[i]
+            }
+            return Math.round(soma / qtd)
+        } // ALGO MAIS COMPLEXO
+        document.write(media(numeros) + "<br>")
+    </script>
+</body>
+</html>
