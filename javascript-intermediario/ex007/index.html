@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout e setInterval</title>
+    <style>
+        div#div1 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="div1"></div>
+    <br>
+    <button id="bt1">Iniciar</button>
+    <button id="bt2">Parar</button>
+
+
+    <script>
+        /* 
+        setTimeout = Determina uma função que vai ser chamada e o tempo na qual a mesma será chamada. Após esse tempo, ele chama e para por aí.
+
+        setInterval = Também receberá uma função callback e também irá receber o tempoo na qual a função será chamada, porém, a cada ciclo do tempo definido, ele chamará a função novamente. Se definirmos que o tempo será 2 segundos, de 2 em 2 segundos ele irá chamar a função na qual especificamos para ele, enquanto este intervalo existir.
+
+        Para cancelarmos este intervalo, podemos usar a função clearInterval().
+        
+        */
+
+        let tmp
+
+        function mudaCor() {
+            let objeto = document.getElementById("div1")
+            let r = Math.floor(Math.random() * 255)
+            let g = Math.floor(Math.random() * 255)
+            let b = Math.floor(Math.random() * 255)
+            objeto.style.backgroundColor = "rgb(" + r + "," + g + "," + b +")"
+        }
+
+        // let tmp =  setTimeout(mudaCor, 3000) Irá chamar a função apenas uma vez.
+
+        
+        // MILISEGUNDOS = 3000 = 3 SEGUNDOS. Irá chamar a função em uma espécie de loop.
+
+        function iniciar() {
+            tmp =  setInterval(mudaCor, 1000) 
+        }
+
+        function parar() {
+            clearInterval(tmp)
+        }
+
+        function addEventos() {
+            document.getElementById("bt1").addEventListener("click", iniciar)
+            document.getElementById("bt2").addEventListener("click", parar)
+        }
+
+        window.addEventListener("load", addEventos)
+    </script>
+</body>
+</html>

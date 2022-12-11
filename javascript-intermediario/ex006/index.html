@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: #f00;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+
+    <script>
+        
+        function msg() {
+            alert("CFB Cursos - Javascript")
+        }
+
+        function cor(objeto, cor) {
+            objeto.style.backgroundColor = cor
+        }
+
+        //INICIALIZAÇÃO DOS EVENTOS
+        function addEventos() {
+            let objeto = document.getElementById("div1")
+            objeto.addEventListener("click", msg)
+            objeto.addEventListener("mouseover", function(event) {
+                cor(objeto, '#fff') // FUNÇÃO ANÔNIMA
+            })
+            objeto.addEventListener("mouseout", function(event) {
+                cor(objeto, '#f00') // FUNÇÃO ANÔNIMA
+            })
+        }
+        
+        window.addEventListener("load", addEventos)
+        
+    </script>
+</body>
+</html>
