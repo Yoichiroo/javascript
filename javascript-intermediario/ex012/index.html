@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatação Condicional</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, tr, th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        td.result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="titulo"></div>
+
+    <table id="tbnotas">
+        <tr>
+            <th>Alunos</th>
+            <th>Nota 1</th>
+            <th>Nota 2</th>
+            <th>Resultado</th>
+        </tr>
+        <tr>
+            <td>Aluno 1</td>
+            <td>35</td>
+            <td>48</td>
+            <td id="n1" class="result"></td>
+        </tr>
+        <tr>
+            <td>Aluno 2</td>
+            <td>20</td>
+            <td>15</td>
+            <td id="n2" class="result"></td>
+        </tr>
+        <tr>
+            <td>Aluno 3</td>
+            <td>48</td>
+            <td>48</td>
+            <td id="n3" class="result"></td>
+        </tr>
+        <tr>
+            <td>Aluno 4</td>
+            <td>20</td>
+            <td>50</td>
+            <td id="n4" class="result"></td>
+        </tr>
+    </table>
+
+    <script>
+
+        let tabela = document.getElementById("tbnotas")
+        let nota
+
+        for (let c = 1; c < tabela.rows.length; c++) {
+            nota = Number(tabela.rows[c].cells[1].innerHTML) + Number(tabela.rows[c].cells[2].innerHTML)
+            tabela.rows[c].cells[3].innerHTML = nota
+        }
+
+        let notas = []
+        notas[0] = document.getElementById("n1")
+        notas[1] = document.getElementById("n2")
+        notas[2] = document.getElementById("n3")
+        notas[3] = document.getElementById("n4")
+
+        for (let c in notas) {
+            if (notas[c].innerHTML < 70) {
+                notas[c].style.color = 'red'
+            } else {
+                notas[c].style.color = 'blue'
+            }
+        }
+        
+    </script>
+</body>
+</html>

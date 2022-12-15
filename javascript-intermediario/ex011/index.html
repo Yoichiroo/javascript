@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursividade</title>
+    <style>
+        div#quadrado {
+            border: 1px solid #000;
+            background-color: #f00;
+            width: 100px;
+            height: 100px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="quadrado"></div>
+
+    <script>
+        /*
+        RECURSIVIDADE É QUANDO UMA FUNÇÃO, EM ALGUM MOMENTO, CHAMA A SI PRÓPRIA {
+            Muitas das vezes isso pode substituir uma estrutura de repetição - WHILE, FOR, DO WHILE-. Isso faz com que o nosso código fique mais limpo, menor. Usamos a recursividade na ultima aula.
+        }
+        RECURSIVIDADE é um recurso COMPUTACIONAL, ou seja, não é apenas exclusivo do JavaScript. Facilita a compreensão do código
+        
+        -----------------------------------------------EXEMPLO DE CONTADOR------------------------------------------------------
+        
+        function contador(min, max) {
+            document.write(min + "<br>")
+            if (min < max) { // ENQUANTO ISSO FOR VERDADE, ISTO IRÁ SE REPETIR
+                contador(++min, max) //Teremos um pré-incremento no número mínimo.
+            }
+        }
+        
+        function fatorial(num) {
+            if (num == 1) {
+                return 1
+            } else {
+                return num*fatorial(num - 1)
+            }
+        }
+        
+        contador(0, 10)
+        document.write(fatorial(5))
+        5! = 5 * 4 * 3 * 2 * 1
+        ------------------------------------------------------------------------FIM DO EXEMPLO----------------------------------
+        */
+
+        //EXEMPLO DA DIV GIRANDO
+
+        let objeto = document.getElementById("quadrado")
+        let ang = 0
+        let animacao
+
+        function girar() {
+            objeto.style.transform = "rotate(" + ang + "deg)"
+            ang++
+            if (ang > 360) {
+                ang = 0
+            }
+            animacao = requestAnimationFrame(girar) // A RECURSIVIDADE IRÁ FAZER COM QUE O ANGULO SEMPRE ADICIONE 1 À ELE MESMO, E ENTÃO TEMOS O TESTE NOVAMENTE COM O ANGULO COM O VALOR NOVO. EXEMPLO: ang = 20; NESTA FUNÇÃO A DIV IRÁ ROTACIONAR TANTOS ÂNGULOS - QUE NESSE CASO É 20 - E IRÁ ADICIONAR 1 À VARIÁVEL ANG, QUE É 20. TEMOS A REPETIÇÃO E FAZEMOS TODO O PROCESSO, COM ANG VALENDO 21.
+        }
+
+        //SEMPRE QUE TIVERMOS LOOPING, PODEMOS USAR A RECURSIVIDADE
+
+        girar()
+    </script>
+</body>
+</html>
