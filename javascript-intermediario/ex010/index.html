@@ -57,11 +57,11 @@
         }
 
         function moverParar() {
-            if (estado) {
+            if (estado) { // ESTADO = 1 
                 estado = 0
                 player.style.backgroundColor = '#f00'
                 cancelAnimationFrame(animacao)
-            } else {
+            } else { // ESTADO = 0
                 estado = 1
                 player.style.backgroundColor = '#00f'
                 animacao = requestAnimationFrame(game)
