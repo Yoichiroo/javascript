@@ -4,15 +4,162 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Slider em JavaScript</title>
     <style>
-        
+
+        button.btSlider {
+            background-color: rgba(0, 0, 0, 0.4);
+            height: 20%;
+            width: 60px;
+            color: white;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            margin: 5px;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        div#divslider {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            max-width: 1000px;
+            height: 590px;
+            border: 1px solid #000;
+            background-size: cover;
+            background-position: center center;
+            margin: 5vw auto;
+        }
+
+        div#divLoad {
+            width: 100%;
+            height: 5px;
+            margin-top: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        div#divBarra {
+            width: 0%;
+            height: 100%;
+            background-color: white;
+        }
     </style>
 </head>
 <body>
     
+    <main>
+        <div id="divslider">
+            <button id="btTrocaAnterior" class="btSlider" onclick="trocaImagem(-1)">
+                <i class="material-icons" class="icones">chevron_left</i>
+            </button>
+            <div id="divLoad">
+                <div id="divBarra">
+                </div>
+            </div>
+            <button id="btTroca" class="btSlider" onclick="trocaImagem(1)">
+                <i class="material-icons" class="icones">chevron_right</i>
+            </button>
+        </div>
+    </main>
     <script>
+        
+        //  PRÉ-CARREGAMENTO DA IMAGEM
 
-    </script>
+        let imagens = []
+        let slider  
+        let imagemAtual
+        let maxImagem
+        let tempo
+        let vtempo 
+        let vload
+
+        function preCarregamento() {
+            let s = 1
+            for(let i = 0; i < 4; i++ ) {
+                imagens[i] = new Image()
+                imagens[i].src = "imagens/s" + s + ".jpg"
+                s++
+            }
+        }
+
+        // CARREGAMENTO DA IMAGEM NA DIV
+
+        function carregarImagem(img) {
+            slider.style.backgroundImage = "url(" + imagens[img].src + ")"
+        }
+        
+        // PÁGINA CARREGADA
+        
+        function iniciar() {
+            preCarregamento()
+            imagemAtual = 0
+            maxImagem = imagens.length - 1
+            slider = document.getElementById("divslider")
+            vload = document.getElementById("divBarra")
+            carregarImagem(imagemAtual)
+            tempo = 0
+            animacao()
+            // tempo = setInterval(trocaImagem, 3000) - RODAR AUTOMATICAMENTE
+        }
+
+        //TROCA DE IMAGENS
+
+        function trocaImagem(dir) {
+            tempo = 0
+            imagemAtual += dir
+            if (imagemAtual > maxImagem) {
+                imagemAtual = 0
+            } else if (imagemAtual < 0) {
+                imagemAtual = maxImagem
+            }
+            carregarImagem(imagemAtual)
+        }
+
+
+
+        function animacao() {
+            tempo++
+            if (tempo >= 500) {
+                tempo = 0
+                trocaImagem(1)
+            }
+            vtempo = tempo / 5
+            vload.style.width = vtempo + "%"
+            window.requestAnimationFrame(animacao)
+        }
+
+        
+        window.addEventListener("load", iniciar)
+        
+        /* = MINHA SOLUÇÃO =
+
+        let botaoTroca = document.getElementById("btTroca")
+        let botaoTrocaAnterior = document.getElementById("btTrocaAnterior")
+
+        function trocaImagemAnterior() {
+            imagemAtual++
+            if (imagemAtual > maxImagem) {
+                    imagemAtual = 0
+            }
+            carregarImagem(imagemAtual)
+        }
+        
+        function trocaImagem() {
+            imagemAtual--
+            if (imagemAtual < 0) {
+                imagemAtual = maxImagem
+            }
+            carregarImagem(imagemAtual)
+        }
+        
+        botaoTroca.addEventListener("click", trocaImagemAnterior)
+        botaoTrocaAnterior.addEventListener("click", trocaImagem)
+        
+        */
+            
+        </script>
 </body>
 </html>
