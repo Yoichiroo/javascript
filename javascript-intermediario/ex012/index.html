@@ -65,17 +65,18 @@
         let tabela = document.getElementById("tbnotas")
         let nota
 
-        for (let c = 1; c < tabela.rows.length; c++) {
-            nota = Number(tabela.rows[c].cells[1].innerHTML) + Number(tabela.rows[c].cells[2].innerHTML)
-            tabela.rows[c].cells[3].innerHTML = nota
-        }
-
+        
         let notas = []
         notas[0] = document.getElementById("n1")
         notas[1] = document.getElementById("n2")
         notas[2] = document.getElementById("n3")
         notas[3] = document.getElementById("n4")
 
+        for (let c = 1; c < tabela.rows.length; c++) {
+            nota = Number(tabela.rows[c].cells[1].innerHTML) + Number(tabela.rows[c].cells[2].innerHTML)
+            tabela.rows[c].cells[3].innerHTML = nota
+        }
+        
         for (let c in notas) {
             if (notas[c].innerHTML < 70) {
                 notas[c].style.color = 'red'
