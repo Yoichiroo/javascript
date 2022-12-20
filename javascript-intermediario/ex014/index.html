@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setAttribute, removeAttribute e hasAttribute</title>
+    <style>
+        div#carro {
+            width: 200px;
+            height: 379px;
+        }
+
+        .c1 { background-image: url("imagens/c1.png"); }
+        .c2 { background-image: url("imagens/c2.png"); }
+        .c3 { background-image: url("imagens/c3.png"); }
+    </style>
+</head>
+<body>
+    <h1>Atributo class em JS</h1>
+    <p>Clique nos botões e veja!</p>
+    <button onclick="trocaCarro(1)">Carro 1</button>
+    <button onclick="trocaCarro(2)">Carro 2</button>
+    <button onclick="trocaCarro(3)">Carro 3</button>
+    <button onclick="removerCarro()">Remover Carro</button>
+    <button onclick="verificar()">Verificar</button>
+    <div id="carro"></div>
+    
+    <script>
+        /* 
+        setAttribute = Trabalha com dois parâmetros, o atributo que quer adicionar e o valor deste atributo. Por exemplo, adicionar um id ao item com o valor carro. {
+            Ex: carro.setAttribute("id", "carro")
+            Outro ex: document.getElementById("carro").setAttribute("class", "c1")
+        }
+
+        removeAttribute = Serve para remover o atributo no qual você adicionou a tal elemento. Trabalha com 1 parâmetro {
+            Ex = obj.removeAttribute("class") 
+        }
+        
+        hasAttribute = Verifica se um determinado atributo existe em algum elemento. Se tiver, retorna true; Se não, retorna false.
+            Ex = if(obj.hasAttribute("class")) {
+                alert("Atributo class está na div!")
+            } else {
+                alert("Sem atributo class!")
+            }
+        */
+
+        //TROCA DE CARRO DEPENDENDO DO VALOR DOS BOTÕES
+
+        function trocaCarro(c) {
+            let obj = document.getElementById("carro")
+            if(c == 1) {
+                obj.setAttribute("class", "c1")
+            } else if (c == 2) {
+                obj.setAttribute("class", "c2")
+            } else if (c == 3) {
+                obj.setAttribute("class", "c3")
+            }
+        }
+
+        function removerCarro() {
+            let obj = document.getElementById("carro")
+            obj.removeAttribute("class")
+        }
+
+        function verificar() {
+            let obj = document.getElementById("carro")
+            if (obj.hasAttribute("class")) {
+                alert("Atributo class está na div!")
+            } else {
+                alert("Sem atributo class!")
+            }
+        }
+    </script>
+</body>
+</html>
