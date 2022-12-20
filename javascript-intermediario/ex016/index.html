@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings P2</title>
+</head>
+<body>
+    <h1>search, replace, charAt, charcodeAt, fromCharCode, concat</h1>
+    <p id="txt">CFB Cursos - Curso de JavaScript: Aula 46 do curso de JavaScript</p>
+        
+    <script>
+        /*
+        O método search pesquisa a palavra indicada e só mostra uma ocorrência. {
+            Ele irá retornar a posição na qual a palavra se encontra, já que a string é um array de palavras.
+            O modificador G não funciona aqui, já que o search apenas retorna a posição do que estamos procurando.
+        }
+
+        O método replace substitui uma palavra indicada por outra. {
+            
+        } 
+
+        */
+        let texto = document.getElementById("txt").innerHTML
+        let res = texto.search(/aula/i)
+
+        document.write(res)
+    </script>
+</body>
+</html>
