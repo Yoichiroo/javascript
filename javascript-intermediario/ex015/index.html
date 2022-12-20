@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método match</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Match e suas pesquisas</h1>
+    <p id="txt">CFB Cursos - Curso de JavaScript: Aula 46 do curso de JavaScript</p>
+
+    <script>
+        /*
+        Trabalharemos com strings hoje, juntamente entendendo o funcionamento do método match.
+            O método irá pesquisar dentro da string por outra string indicada. Pode ser uma letra, uma palavra e afins.
+            Ele possibilita modificar, adicionar e outras coisas a nossa pesquisa dentro da nossa string.
+        
+        O método pode retornar a quantidade de elementos que ele encontrou, o elemento que ele encontrou em forma de Array. Se o método não encontrar nada, ele retorna em forma de null. {
+            Lembrando, strings com letra minúscula e maíscula são coisas DIFERENTES.
+            Logo, se eu procurar por, digamos, aula e não Aula, o método retorna null.
+        }
+
+        Caso queiramos ver quantos elementos, basta usarmos o '.length'.
+
+        Podemos mudar e personalizar o match, para tirarmos esta diferença de strings.
+        Podemos usar MODIFICADORES, são eles:
+
+        i = Altera a busca sem case-sensitive, ou seja, não diferencia letras maiúsculas de minúsculas.
+
+        g = Diz ao método para encontrar todas as ocorrências da palavra e não parar na primeira encontrada, cada ocorrênciaé armazenada em uma posição do array.
+
+        m = Pesquisa normal sem armazenar em forma de array. É o menos usado.
+
+        Caso queiramos pesquisar duas, três, quatro e quantas letras eu quiser, eu posso usar a indicação de vetor para isto.
+            Ex = let res = texto.match(/[ca]/ig)
+            // Neste res, ele pesquisará a letra C e A, ignorando o case-sensitive e procurando por TODAS as ocorrências.
+                Se quisermos pesquisar todas as ocorrências, menos as letras C e A, basta colocarmos o acento circunflexo dentro da expressão. Assim:
+                    let res = texto.match(/[^ca]/ig)
+                Assim ele retorna todas as ocorrências, menos as C e A.
+
+        Caso queiramos pesquisar uma letra entre outra, basta usarmos o -
+            Ex: let res = texto.match(/[a-g]/ig)
+            Assim ele retorna todas as letras entre A e G. Isso se chama alcance.
+            Podemos acoplar o circunflexo junto, sem problemas.
+
+        LISTA DE EXPRESSÕES COMPLETAS:
+
+        [abcd] = Pesquisa pelos caracteres A, B, C E D.
+        [^ab] = Pesquisa por todos os caracteres, menos A e B.
+        [a-f] = Pesquisa por todos os caracteres de A até F.
+        [^a-f] = Pesquisa por todos os caracteres, menos os de A até F.
+        [a|f] = Pesquisa pelos caracteres A e F, semelhantes à primeira opção.
+        
+        LISTA DE METACARACTERES:
+
+        \w = Pesquisa somente por letras e numerais, ignorando espaços, traços, etc.
+        \W = Pesquisa por caracteres diferentes de números e letras
+        \d = Pesquisa por numerais
+        \D = Pesquisa por todos os caracteres que não são numerais
+        \s = Pesquisa pelos espaços 
+        \S = Pesquisa por todos os caracteres, menos os espaços
+        \b = Pesquisa por ocorrência que iniciem ou terminem com uma letra ou número, cada ocorrência que iniciar e terminar com um número ou letra conta como 2.
+        \B = Pesquisa por ocorrência que NÃO iniciem ou terminem com uma letra ou número
+        \O = Procura por caracteres nulos 
+        \n = Procura por quebra de linha 
+        \r = Procura por caractere de "retorno de carro" ENTER.
+        \t = Procura por caractere de tabulação TAB
+        \v = Procura por caractere de tabulação vertical
+        s+ = Procura por palavras que contenham uma ou mais letras S.
+        */
+
+        let texto = document.getElementById("txt").innerHTML
+        let res = texto.match(/\w/ig)
+        document.write(res + " : " + res.length + "<br>")
+
+        document.write(res[1])
+    </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,7 +76,7 @@
             nota = Number(tabela.rows[c].cells[1].innerHTML) + Number(tabela.rows[c].cells[2].innerHTML)
             tabela.rows[c].cells[3].innerHTML = nota
         }
-        
+
         for (let c in notas) {
             if (notas[c].innerHTML < 70) {
                 notas[c].style.color = 'red'
