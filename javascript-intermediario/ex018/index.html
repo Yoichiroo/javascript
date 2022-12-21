@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings P4</title>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>toString(), trim() e caracteres especiais.</h1>
+    <script>
+        /*
+        O método toString converte uma variável, vetor e afins para uma string. {
+            Ele faz conversão de bases.
+            Ex:
+                let bin= num.toString(2)
+                //Retornará o binário de tal número.
+        }
+
+        O método trim() apaga espaços antes e depois da nossa String. {
+            No HTML, não tem mudanças, já que o HTML não renderiza o espaço por padrão.
+            Mas em alerts, prompts e etc, ele funciona perfeitamente. Espaços intermediários ele não apaga.
+            Para adicionarmos caracteres especiais numa string, basta usarmos a \.
+        }
+
+        */
+        
+        let texto = "CFB Cursos \nCurso de\nJavaScript"
+        alert(texto)
+        
+        let res = texto.trim()
+        
+        // document.write(res + "<br>")
+    </script>
+</body>
+</html>

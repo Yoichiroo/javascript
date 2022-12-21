@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings P3</title>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>indexOf(), lastIndexOf(), localeCompare(), slide(), split(), substr(), toLowerCase(), toUpperCase()</h1>
+    <p id="txt">CFB Cursos - Curso de JavaScript</p>
+    
+    <script>
+        /*
+        O método indexOf() procura dentro de uma string, variável ou vetor por um caractere específico que queremos encontrar, retornando a posição do mesmo. {
+            Ex:
+                let res = texto.indexOf("J")
+                Ele retorna a posição, que no caso, é 22. Caso não encontre, ele retorna -1, pois não existe um lugar para tal caractere dentro do que estamos procurando. 
+                Ele é case-sensitive.
+        }
+
+        O método lastIndexOf() retorna a última posição do caractere encontrado. Semelhante ao indexOf().
+
+        O método localeCompare() fará uma comparação de duas strings. Ele retorna 0 e 1, Caso as strings forem iguais, ele retornará 0; Caso não, retornará 1. {
+            Ex:
+                let texto = document.getElementById("txt").innerHTML
+                let texto2 = texto
+                let res = texto.localeCompare(texto2)
+            Aqui ele retornará 0, já que são idênticas.
+        }
+        
+        O método slice() corta a string em um ponto específico, funciona com variáveis e vetores. {
+            Ele fará um corte na string e retornará o corte especificado.
+            Se quisermos pegar a palavra cursos do parágrafo acima, basta fazemos:
+                let res = texto.slice(3, 10)
+                //A palavra começa na posição 3 e termina na 10, ou seja, exatamente o que queremos
+        }
+
+        O método split() pica a string no caractere indicado, e todas as palavras que foram recortadas vão para um vetor. {
+            Ex:
+                let texto = document.getElementById("txt").innerHTML
+                let res = texto.split(" ")
+                // Ele recortará todos os espaços e irá pôr as palavras em um vetor. O CFB vai para a posição 0; o Cursos para a posição 1  e assim por diante.
+        }
+
+        O método substr() é semelhante ao slice(), porém, no substr a gente indicará a posição inicial e o tamanho do corte. {
+            Ex:
+                let res = texto.susbtr(4, 6)
+                //Começaremos a partir da posição 4, e então, o tamanho de corte será de 6 caracteres. Assim, ele retornará Cursos. 
+            A diferença é que no splice() indicamos a poisção inicial e a final.
+        }
+
+        O método toLowerCase() converte tudo para minúsculo.
+        O método toUpperCase() converte tudo para maiúsculo.
+            Ambos os métodos podem ser atribuídos com os outros métodos acima.
+        */
+        let texto = document.getElementById("txt").innerHTML
+        let res = texto.toUpperCase().substr(22, 10)
+
+        document.write(res)
+    </script>
+</body>
+</html>
