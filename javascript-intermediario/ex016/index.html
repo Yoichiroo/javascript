@@ -7,8 +7,8 @@
     <title>Strings P2</title>
 </head>
 <body>
-    <h1>search, replace, charAt, charcodeAt, fromCharCode, concat</h1>
-    <p id="txt">CFB Cursos - Curso de JavaScript: Aula 46 do curso de JavaScript</p>
+    <h1>search, replace, charAt, charCodeAt, fromCharCode, concat</h1>
+    <p id="txt">CFB Cursos </p>
         
     <script>
         /*
@@ -18,14 +18,55 @@
         }
 
         O método replace substitui uma palavra indicada por outra. {
-            
+            Basta adicionarmos a string que queremos substituir, assim:
+            let res = texto.replace(/curso/i, "Aula")
+            Ele irá procurar a primeira ocorrência indicada, e substituirá por Aula.
         } 
 
-        */
-        let texto = document.getElementById("txt").innerHTML
-        let res = texto.search(/aula/i)
+        O método charAt retorna o caractere indicado pela posição indicada no parâmetro do método. {
+            Lembrando que o charAt funciona na forma de vetores, ou seja, o índice começa do 0.
+            Então temos:
+                let res = texto.charAt(2)
+            Ele irá retornar o caractere na posição 2 da string, que é o nosso Array.
+            Indicamos a posição, e ele retorna o caractere.
+        }
 
-        document.write(res)
+        Muita das vezes, queremos o retorno do código do caractere. Invés de usarmos o charAt, temos:
+
+        O método charCodeAt() retorna justamente o código keyCode do caractere.
+
+        O método fromCharCode() é o inverso do charCodeAt(), ou seja, informamos o código do caractere e ele nos retorna o caractere em si. {
+            Podemos usar este método com variáveis, e a variável se torna o parâmetro do método.
+            Ex: 
+                let res = texto.charCodeAt(0)
+                document.write(String.fromCharCode(res))
+                    //Ele retornará primeiro o código 67, já que estamos pedindo o código do caractere na posição 0. Depois, ele retornará o caractere a partir do código que estamos pedindo como parâmetro, que no nosso caso, é a res.
+                    É obrigatório pôr esse "String." no início para torná-lo uma string.
+        }
+
+        O método concat() concatena uma string em outra. E, claro, podemos personalizar esta concatenação. {
+            E é muito simples, podemos criar variáveis para concatenarmos, e essas variáveis podem ser strings e etc
+            Ex:
+                let texto = document.getElementById("txt").innerHTML
+                let texto2 = "- Curso de Javascript: Aula 46 do curso de JavaScript"
+                let res = texto.concat(texto2)
+                O .concat() vai ser atribuído ao que receberá a concatenação, o que estará como parâmetro será o que estará sendo adicionado. Neste caso, temos o texto como "CFB Cursos" que receberá o texto2 como " - Curso de Javascript: Aula 46 do curso de JavaScript".
+            Não precisamos passar a variável exatamente para a concatenação, podemos passar a string diretamente.
+            E podemos passar mais de um parâmetro para a concatenação, assim:
+                let texto = document.getElementById("txt").innerHTML
+                let texto2 = " -  Texto de teste"
+                let res = texto.concat("- Curso de JavaScript: Aula 46 do curso de JavaScript" + texto2)
+                Assim ele concatena duas strings em uma outra string.
+        }
+
+        */
+        
+        let texto = document.getElementById("txt").innerHTML
+        let texto2 = " -  Texto de teste"
+        let res = texto.concat("- Curso de JavaScript: Aula 46 do curso de JavaScript" + texto2)
+
+        document.write(res + "<br>")
+        // document.write(String.fromCharCode(res))
     </script>
 </body>
 </html>
