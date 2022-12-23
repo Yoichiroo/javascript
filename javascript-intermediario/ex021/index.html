@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Window - P3</title>
+    <style>
+
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        div#painel {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        /* h1 {
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            width: 100px;
+            margin: 10px auto;
+            border: none;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 20px;
+        }
+         */
+        </style>
+</head>
+<body>
+    <h1>scrollBy, frames, length e parent</h1>
+    <!-- <button onclick="info()">Tamanho</button> <button onclick="rolarPagina()">Rolar</button> <div id="painel"></div> -->
+    <iframe src="p2.html" frameborder="1"></iframe>
+    <iframe src="p2.html" frameborder="1"></iframe>
+    <iframe src="p2.html" frameborder="1"></iframe>
+    <iframe src="p2.html" frameborder="1"></iframe>
+    <div id="painel"></div>
+    <script>
+        /*
+        O método scrollBy() permite a gente posicionar uma janela em uma posição determinada dentro da página, ou seja, ele permite que eu role a página e me posicione me determinada coordenada de X e Y. {
+            Ele necessita de dois parâmetros, nos quais são as coordenadas para o X e Y.
+            Podemos atribuir esta rolagem a uma animação, para ficar mais bonito, suavizado.
+        }
+
+        O método length() retorna a quantidade de frames que temos dentro da página. {
+            Ex: let qtd = window.length
+            Ele vai retornar quantas tags "iframe" temos, no nosso caso, temos 4. Então, ele retornará 4.
+        }
+
+        O método frames funciona como um vetor, e ele nos permite botar coisas nos nossos iframes.
+            Podemos usar o .location dentro do .frames para atribuirmos uma URL específica aos nossos frames, como por exemplo:
+            window.frames[0].location = "https://www.youtube.com/"
+            Ele atribuirá o site do YouTube ao iframe, assim podendo usar dentro da nossa página.
+            Podemos criar uma estrutura de repetição para atribuirmos este site a todos os elementos do vetor frames.
+        */
+
+
+        /*
+        CÓDIGO INUTILIZADO
+        
+        let largura, altura, posicaoX, posicaoY
+        let painel = document.getElementById("painel")
+
+        
+        function info() {
+            largura = window.outerWidth // LARGURA EXTERNA .outerWidth
+            altura = window.outerHeight 
+            posicaoX = window.screenX
+            posicaoY = window.screenY
+            painel.innerHTML = "Largura - " + largura + "px" + "<br>" + "Altura - " + altura + "px" + "<br>" + "X - " + posicaoX + " <br> " + "Y - " + posicaoY
+        }
+
+        function rolarPagina() {
+            window.scrollBy(500, 500)
+        }
+
+        function iniciar() {
+            let qtd = window.length
+            let painel = document.getElementById("painel").innerHTML = qtd
+            for (let i = 0; i < qtd; i++) {
+                window.frames[i].location = "https://www.instagram.com/"
+            }
+            
+        }
+    
+        window.addEventListener("load", iniciar)
+        */
+    </script>
+</body>
+</html>

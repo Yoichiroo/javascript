@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Navigator</title>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        div#painel {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="painel"></div>
+
+    <script>
+        /*
+        O objeto Navigator vai nos possibiltiar retirar informações do navegador.
+        Para usarmos o objeto Navigator, basta chamarmos o objeto e a propriedade que queremos retirar.
+        
+        PROPRIEDADES
+
+        appName = Retorna o nome do browser. Porém temos um problema, caso abrirmos em browsers modernos, o appName retornará o nome Netscape.
+
+        appVersion = Retorna a versão do browser.
+
+        cookieEnabled = Retorna a verificação se os cookis estão ativados. Retorna um booleano.
+
+        geolocation = Retorna a localização do nosso computador. {
+            Temos que usar um método chamado getCurrentPosition, usando 3 parâmetros.
+            1° parâmetro = Se o browser suporta este recurso.
+            2° parâmetro = Caso exista algum erro, ele chamará alguma função para corrigir.
+            3° parâmetro = Opções de geolocalização (precisão, longitude, altitude)
+            Ex:
+            navigator.geolocation.getCurrentPosition(localizar)
+            Aqui, ele está chamando uma função que pegará as coordenadas do dispositivo e mostrará na tela.
+            A função localizar() teria um parâmetro pos.
+            function localizar(pos) {
+            let coordenadas = pos.coords
+            painel.innerHTML += "Localização: "+ "<br>" + "Latitude: " + coordenadas.latitude + " Longitude: " + coordenadas.longitude
+            Aqui ele pega a latitude e a longitude do dispositivo e mostra no arquivo HTML.
+            }
+        }
+
+        language = Retorna a língua do browser.
+
+        platform = Retorna o sistema operacional que o código está sendo rodado
+        */
+
+        let painel
+        
+        function localizar(pos) {
+            let coordenadas = pos.coords
+            painel.innerHTML += "Localização: "+ "<br>" + "Latitude: " + coordenadas.latitude + " Longitude: " + coordenadas.longitude
+        }
+
+        function verificar() {
+            painel = document.getElementById("painel")
+            painel.innerHTML = "Nome do Browser - " + navigator.appName + "<hr>"
+            painel.innerHTML += "Versão do Browser - " + navigator.appVersion + "<hr>"
+            painel.innerHTML += "Cookies habilitados - " + navigator.cookieEnabled + "<hr>"
+            navigator.geolocation.getCurrentPosition(localizar)
+            painel.innerHTML += "Língua - " + navigator.language + "<hr>"
+            painel.innerHTML += "onLine - " + navigator.onLine + "<hr>"
+            painel.innerHTML += "Sistema Operacional - " + navigator.platform + "<hr>"
+
+        }
+        
+
+        window.addEventListener("load", verificar)
+    </script>
+</body>
+</html>

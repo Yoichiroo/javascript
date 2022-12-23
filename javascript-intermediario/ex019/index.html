@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Window</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Minha janela</h1>
+    <button onclick="abrirJanela()">Abrir nova janela</button>
+    <button onclick="fecharJanela()">Fechar nova janela</button>
+
+    <script>
+        /*
+            O objeto window nos permite abrir e gerenciar uma nova janela em JS. Podemos abrir essa nova janela com uma página existente ou uma URL de um site. 
+
+            O objeto window também possui métodos para podermos adicionar conteúdo nesta nova janela aberta. {
+                Se eu quiser chamar uma nova janela, podemos usar o método open().
+                A partir da abertura dessa janela, podemos personalizar o conteúdo mostrado da maneira que quisermos.
+                Se quisermos manipular de maneira mais fácil, podemos associá-la a uma variável.
+            }
+
+            Podemos escrever o que queremos que o método open() abra com base no seu parâmetro. {
+                Ex: let janela = window.open("tmp.html")
+
+            Se eu quiser abrir essa janela apenas quando eu clicar em um botão, é só associar uma função com este método ao botão.
+                Ex: function abirJanela() {
+                    let janela = window.open("tmp.html")
+                }
+                
+            Podemos especificar outros parâmetros para o método open, como por exemplo; o target.
+                O target serve para dizer ao navegador onde que esta janela será aberta. Na maioria dos casos, o target padrão é _self. Podemos mudar isto também. Se quisermos pôr esta janela em um iframe, basta usarmos o nome do mesmo.
+                    Ex:
+                    let janela = window.open("tmp.html", "cfb")
+                    Ele irá abrir esta janela no iframe com o name cfb.
+
+            Podemos especificar o tamanho, a posição, em fullscreen... Tudo isso dentro dos parâmetros do método open()
+                Ex: let janela = window.open("tmp.html", "_blank", "width=300, height=300")
+                Aqui ele irá abrir uma página externa com a largura e altura de 300px. Não será considerado uma nova aba, já que a largura e altura são configuradas para aparecer como uma janela.
+                
+            A posição também podemos mudar, usando top, left, right etc. Tudo será no mesmo parâmetro.
+            }
+
+            Para fecharmos esta janela, podemos usar o método close(). {
+                Basta usarmos este método junto da variável que está a janela.
+                    Ex:
+                    let janela //Variável da janela
+                    janela.close()
+            }
+        */
+
+        let janela
+        let janela2
+
+
+        function abrirJanela(){
+            janela = window.open("tmp.html", "_blank", "width=300, height=300, top=300, left=300")
+            janela2 = window.open("tmp.html", "_blank", "width=300, height=300, top=400, left=400")
+
+        }
+
+        function fecharJanela() {
+            janela.close()
+            janela2.close()
+        }
+    </script>
+</body>
+</html>
