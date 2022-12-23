@@ -53,7 +53,15 @@
 
         language = Retorna a língua do browser.
 
-        platform = Retorna o sistema operacional que o código está sendo rodado
+        platform = Retorna o sistema operacional que o código está sendo rodado.
+
+        onLine = Retorna se o sistema está conectado a uma rede de Internet. Valores booleanos.
+
+        product = Retorna a engine do browser.
+
+        userAgent = Retorna o agente do browser.
+
+        Dependendo do navegador, as propriedados podem variar um pouco, porém, são informações bem próximas se não as informações em si.
         */
 
         let painel
@@ -71,8 +79,9 @@
             navigator.geolocation.getCurrentPosition(localizar)
             painel.innerHTML += "Língua - " + navigator.language + "<hr>"
             painel.innerHTML += "onLine - " + navigator.onLine + "<hr>"
+            painel.innerHTML += "Engine - " + navigator.product + "<hr>"
             painel.innerHTML += "Sistema Operacional - " + navigator.platform + "<hr>"
-
+            painel.innerHTML += "Agente - " + navigator.userAgent + "<hr>"
         }
         
 
