@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Screen</title>
+    <style>
+        div#painel {
+            width: 400px;
+            height: 500px;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="painel"></div>
+
+    <script>
+        /*
+        O objeto screen é bem limitado, possuindo apenas 6 propriedades, sendo elas: width, height, availWidth, availHeight, colorDepth e pixelDepth.
+            Retorna configurações da tela, e não da janela. Essas configurações são de quem está visitando a aplicação, no caso, retornará a configuração da minha tela.
+
+        Então temos:
+        
+        width = Retorna a largura completa da tela.
+        height = Retorna a altura completa da tela.
+        availWidth = Retorna a lagura completa - tirando a barra de ferramentas e etc - da tela.
+        availHeight = Retorna a altura complea - tirando a barra de ferramentas e etc - da tela.
+        colorDepth = Retorna a profundidade de bits da paleta de cor para a exibiçã de imagens.
+        pixelDepth =  Retorna a informação de resolução da cor (em bit por pixel da tela.) 
+
+        */
+        let painel = document.getElementById("painel") 
+        painel.innerHTML += "Largura - " + screen.width + "px" + "<hr>" + "Altura - " + screen.height + "px" + "<hr>" + "Resolução: " + screen.width + "x" + screen.height + "<hr>" + "Exceção da barra de tarefas - " + screen.availWidth + "x" + screen.availHeight + "<hr>"
+        painel.innerHTML += "Profundidade de cores (imagens) - " + screen.colorDepth + " bits" + "<hr>" + "Resolução de cor da tela (pixel) " + screen.pixelDepth + " bits/px"
+    </script>
+</body>
+</html>
