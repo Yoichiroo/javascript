@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto History</title>
+</head>
+<body>
+    <h1>Home - Página principal - index.html</h1>
+    <p id="info"></p>
+    <a href="index.html">Home</a>
+    <a href="p2.html">Página 2</a>
+    <a href="p3.html">Página 3</a> <hr>
+    <button id="btVoltar">Voltar</button>
+    <button id="btAvancar">Avançar</button>
+    <button id="btVoltar2">Voltar2</button>
+
+<script>    
+    /*
+    O objeto history é mais uma extensão do objeto window, possui métodos para trabalhar com histórico de páginas do navegador, fazendo assim possível avançar ou voltar a navegação do usuário.
+        Enquanto navegamos na internet, preenchemos nosso histórico com os dados e a URL do site que usamos. Ou seja, a cada janela, nós adicionamos 1 á quantidade do nosso histórico.
+    
+    Para associarmos funções para avançar e voltar a página, basta usarmos o método history.forward() e history.back() no window
+    Ex: 
+        function historicoVoltar() {
+            window.history.back()
+        } // Aqui ele voltará 1 página.
+
+    O método go() permite avançar ou recuar determinado número de páginas
+    */
+    let painel = document.getElementById("info")
+    let btBack = document.getElementById("btVoltar")
+    let btForward = document.getElementById("btAvancar")
+    let btBack2 = document.getElementById("btVoltar2")
+    
+    painel.innerHTML = history.length
+    btBack.addEventListener("click", function() {
+        historicoIr(-1)
+    })
+    btBack2.addEventListener("click", function(){
+        historicoIr(-2)
+    })
+    btForward.addEventListener("click", function(){
+        historicoIr(1)
+    })
+
+    function historicoIr(num) {
+        window.history.go(num)
+    }
+    </script>
+</body>
+</html>

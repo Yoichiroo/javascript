@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 2</title>
+</head>
+<body>
+    <h1>Home - Página 2 - p2.html</h1>
+    <p id="info"></p>
+    <a href="index.html">Home</a>
+    <a href="p2.html">Página 2</a>
+    <a href="p3.html">Página 3</a> <hr>
+    <button id="btVoltar">Voltar</button>
+    <button id="btAvancar">Avançar</button>
+    <button id="btVoltar2">Voltar2</button>
+
+    <script>
+        let painel = document.getElementById("info")
+        let btBack = document.getElementById("btVoltar")
+        let btForward = document.getElementById("btAvancar")
+        let btBack2 = document.getElementById("btVoltar2")
+
+        painel.innerHTML = history.length
+        btBack.addEventListener("click", function() {
+            historicoIr(-1)
+        })
+        btBack2.addEventListener("click", function(){
+            historicoIr(-2)
+        })
+        btForward.addEventListener("click", function(){
+            historicoIr(1)
+        })
+
+        function historicoIr(num) {
+            window.history.go(num)
+        }
+
+    </script>
+</body>
+</html>
