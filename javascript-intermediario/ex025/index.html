@@ -5,16 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Objeto Location</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <h1>Home - index.html</h1>
-    <a href="p2.html"></a>
+    <a href="p2.html#Yoichiro#Github">Página 2</a>
+
     <script>
         /*
-        
         O objeto location serve para manipular a URL do site, ou seja, podemos pegar informações da URL ou setar algo na nossa URL. Existem diversas propriedades para o objeto, no qual iremos ver hoje.
 
+        PROPRIEDADES
 
+        # = Passagem de parâmetros de uma página pra outra {
+            Para usarmos, no link que acessaremos para a outra página, basta pôr um # depois da URL da página e colocar o valor que deseja passar adiante.
+                Ex:
+                    <a href="p2.html#Yoichiro">Página 2</a>
+                    // A URL agora ficará com tal parâmetro na URL
+            Para pegarmos o parâmetro e passarmos para o HTML, basta usarmos a propriedade hash com o método location. Para tirarmos o hashtag que foi junto do parâmetro, podemos usar nossos conhecimentos de string e acionar o método split().
+        }
+
+        host e hostname = Retorna o endereço do host, que no nosso caso, é o IP do Server local da extensão. Caso não estejamos em uma rede, não irá retornar nada.
+        
+        href = Retorna a URL do site. Serve para obtermos a URL ou setar a URL {
+            Para setar a href para um outro site, basta fazermos com que o .href receba alguma URL.
+                Ex:
+                    let h = location.href = "http://github.com/Yoichiroo"
+        }
+        
         */
     </script>
 </body>

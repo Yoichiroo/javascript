@@ -8,11 +8,27 @@
     <style>
         body {
             background-color: rgb(42, 169, 253);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        * {
+            color: white;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <h1>p2.html</h1>
     <a href="index.html">Home</a>
+
+    <script>
+        let aux = location.hash
+        let dados = aux.split("#")
+        let v1 = dados[1]
+        let v2 = dados[2]
+        let h = location.href = "http://youtube.com"
+        document.write(v1 + " " + v2 + "<br>")
+        document.write(h)
+    </script>
 </body>
 </html>
