@@ -22,13 +22,19 @@
     <a href="index.html">Home</a>
 
     <script>
-        let aux = location.hash
-        let dados = aux.split("#")
-        let v1 = dados[1]
-        let v2 = dados[2]
-        let h = location.href = "http://youtube.com"
-        document.write(v1 + " " + v2 + "<br>")
-        document.write(h)
+        let aux = location.search
+        let dados = aux.split("?")
+        let v1 = dados[1].split("=")[1  ]
+        /* 
+            let v2 = dados[2]
+            let h = location.href
+            let o = location.origin
+            let p = location.pathname
+            let protocolo = location.protocol
+            document.write(v1 + " " + v2 + "<br>")
+            document.write(h + "<br>" + o + p + "<br>" + protocolo)
+        */ 
+        document.write(v1)
     </script>
 </body>
 </html>
