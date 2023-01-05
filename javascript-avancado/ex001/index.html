@@ -8,9 +8,63 @@
 </head>
 <body>
     <script>
+
         /*
-        LocalStorage define uma área para armazenamento de chaves, valores e elementos.
+
+        LocalStorage define uma área para armazenamento de chave valor e elementos. Não são excluídos ao fechar a página, janela, desligar o computador, etc. Não são temporários como os cookies. {
+            Como o nome diz, este dado fica armazenado no servidor local. 
+                Existem 3 métodos:
+                    setItem = Define um conjunto chave valor para o LocalStorage.
+
+                    getItem = Obtém o valor da chave. {
+                        Podemos escrever com document.write()
+                    }
+
+                    removeItem = Remove uma chave valor já armazenado. {
+                    Basta escrevermos o nome da chave para remover.
+                    }
+            }
+
+        Porém, e se algum navegador não for compatível com WebStorage?
+            Basta fazemos uma verificação de compatibilidade com uma estrutura condicional.
+            Ex: 
+                if(typeof(Storage) != "undefined") {
+                    let github = localStorage.getItem("Github")
+                    localStorage.setItem("Github", "Yoichiroo")
+                    document.write(github)
+                } else {
+                    document.write("Sem suporte à Web Storage!")
+                }
+        
+        Podemos fazer, se quisermos, um contador para o número de vezes que alguém entrou em um site. Assim:
+            Primeiro, faremos a verficiação de compatibilidade.
+
+            if(typeof(Storage) != "undefined") {
+                //Feito isso, temos que verificar se a variável de visitas já está armazenada no localStorage. Caso esteja, incrementaremos +1 na variável; Caso não, criaremos ela com o valor 1. Então temos:
+                if(localStorage.visitas) {
+                    localStorage.visitas = Number(localStorage.visitas) + 1
+                } else {
+                    localStorage.visitas = 1
+                } //E então, basta escrevermos esta variável no HTML.
+                document.write("Visitas ao site: " + localStorage.visitas)
+            } else {
+                document.write("Sem suporte a Web Storage!")
+            }
         */
+
+        if(typeof(Storage) != "undefined") {
+            if(localStorage.visitas) {
+                localStorage.visitas = Number(localStorage.visitas) + 1
+            } else {
+                // localStorage.setItem("visitas", "1")
+                localStorage.visitas = 1
+                //O mesmo resultado, porém, é uma maneira mais "fácil".
+            }
+            document.write("Visitas ao site: " + localStorage.visitas )
+        } else {
+            document.write("Sem suporte a Web Storage!")
+        }
+    
     </script>
 </body>
 </html>
