@@ -9,46 +9,93 @@
         * {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
+
+        form#uConfig {
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border: 1px solid black;
+            background-color: rgb(223, 221, 221);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        p#painel {
+            font-weight: bold;
+            font-size: 2em;
+        }
     </style>
 </head>
 <body>
+    <h1>Teste com localStorage</h1> <hr>
+    <p id="painel"></p> <hr>
+    <button onclick="mostrarConfig()">Customizar</button>
 
-    <h1>Teste com localStorage</h1>
-
-    <form action="" name="dados">
+    <form action="" name="uConfig" id="uConfig">
         <label for="nome">Nome:</label><br>
         <input type="text" name="uNome" id="uNome" size="20"><br><br>
-        <label for="uCorF">Cor de fundo:</label> <br>
-        <input type="radio" name="uCorF" id="" onclick="definirCor(1, '#000')">Preto <br>
-        <input type="radio" name="uCorF" id="" onclick="definirCor(1, '#fff')">Branco <br>
-        <input type="radio" name="uCorF" id="" onclick="definirCor(1, '#f00')">Vermelho <br>
-        <input type="radio" name="uCorF" id="" onclick="definirCor(1, '#0f0')">Verde <br>
-        <input type="radio" name="uCorF" id="" onclick="definirCor(1, '#00f')">Azul <br> <br>
+        <label>Cor de fundo:</label> <br>
+        <input type="radio" name="uCorF" id="uCorF" onclick="definirCor(1, '#000')">
+        <label for="uCorF">Preto</label><br>
+        <input type="radio" name="uCorF" id="uCorF2" onclick="definirCor(1, '#fff')">
+        <label for="uCorF2">Branco</label><br>
+        <input type="radio" name="uCorF" id="uCorF3" onclick="definirCor(1, '#f00')">
+        <label for="uCorF3">Vermelho</label><br>
+        <input type="radio" name="uCorF" id="uCorF4" onclick="definirCor(1, '#0f0')">
+        <label for="uCorF4">Verde</label><br>
+        <input type="radio" name="uCorF" id="uCorF5" onclick="definirCor(1, '#00f')">
+        <label for="uCorF5">Azul</label><br><br>
         <label for="uCorT">Cor de texto:</label> <br>
-        <input type="radio" name="uCorT" id="" onclick="definirCor(0, '#000')"> Preto <br>
-        <input type="radio" name="uCorT" id="" onclick="definirCor(0, '#fff')"> Branco <br> <br>
-        <input type="button" value="Gravar" onclick="">
+        <input type="radio" name="uCorT" id="uCorT" onclick="definirCor(0, '#000')"> 
+        <label for="uCorT">Preto</label><br>
+        <input type="radio" name="uCorT" id="uCorT2" onclick="definirCor(0, '#fff')">
+        <label for="uCorT2">Branco</label> <br><br>
+        <input type="button" value="Gravar" onclick="gravarDados()">
     </form>
 
     <script>
+        //CRIANDO AS VARIÁVEIS NECESSÁRIAS
+        let corFundo, corTexto, Nome
 
         //DEFINIÇÃO DE COR
         function definirCor(operacao, cor) {
             //Para BgColor = 1, para Color = 0
             if(operacao == 1) {
                 document.body.style.backgroundColor = cor
+                corFundo = cor
+                
             } else {
                 document.body.style.color = cor
+                corTexto = cor
             }
         }
 
-        if(typeof(Storage) != "undefined") {
-            
-        } else {
-            document.write("Sem suporte a Web Storage!")
+        //VERFICAÇÃO DE EXISTÊNCIA DE DADOS
+        if(localStorage.nome) {
+            corFundo = localStorage.corDeFundo
+            corTexto = localStorage.Texto
+            Nome = localStorage.nome
+            definirCor(1, corFundo)
+            definirCor(0, corTexto)
+            document.getElementById("painel").innerHTML = "Seja bem-vindo(a), " + Nome + "!"
         }
 
-    
+        //GRAVAÇÃO DE DADOS
+        function gravarDados() {
+            let formulario = document.getElementById("uConfig")
+            formulario.style.display = "none"
+            Nome = document.getElementById("uNome").value
+            localStorage.nome = Nome
+            localStorage.corDeFundo = corFundo
+            localStorage.Texto = corTexto
+        }
+        
+        //MOSTRAR CONFIGURAÇÕES
+        function mostrarConfig() {
+            let formulario = document.getElementById("uConfig")
+            formulario.style.display = "block"
+        }
     </script>
 </body>
 </html>
