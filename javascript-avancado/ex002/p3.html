@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage - P3</title>
+    <style>
+        body {
+            background-color: rgb(63, 99, 255);
+            color: rgb(0, 0, 0);
+            font-size: 1.7em;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Página 3</h2>
+    <div id="painel"></div>
+    
+    <script>
+        function iniciar() {
+            document.getElementById("painel").innerHTML = sessionStorage.Nome
+        }
+        window.addEventListener("load", iniciar)
+    </script>
+</body>
+</html>
