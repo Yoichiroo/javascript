@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage - Web Storage</title>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Teste com localStorage</h1>
+
+    <form action="" name="dados">
+        <label for="nome">Nome:</label><br>
+        <input type="text" name="uNome" id="uNome" size="20"><br><br>
+        <label for="uCorF">Cor de fundo:</label> <br>
+        <input type="radio" name="uCorF" id="" onclick="definirCor(1, '#000')">Preto <br>
+        <input type="radio" name="uCorF" id="" onclick="definirCor(1, '#fff')">Branco <br>
+        <input type="radio" name="uCorF" id="" onclick="definirCor(1, '#f00')">Vermelho <br>
+        <input type="radio" name="uCorF" id="" onclick="definirCor(1, '#0f0')">Verde <br>
+        <input type="radio" name="uCorF" id="" onclick="definirCor(1, '#00f')">Azul <br> <br>
+        <label for="uCorT">Cor de texto:</label> <br>
+        <input type="radio" name="uCorT" id="" onclick="definirCor(0, '#000')"> Preto <br>
+        <input type="radio" name="uCorT" id="" onclick="definirCor(0, '#fff')"> Branco <br> <br>
+        <input type="button" value="Gravar" onclick="">
+    </form>
+
+    <script>
+
+        //DEFINIÇÃO DE COR
+        function definirCor(operacao, cor) {
+            //Para BgColor = 1, para Color = 0
+            if(operacao == 1) {
+                document.body.style.backgroundColor = cor
+            } else {
+                document.body.style.color = cor
+            }
+        }
+
+        if(typeof(Storage) != "undefined") {
+            
+        } else {
+            document.write("Sem suporte a Web Storage!")
+        }
+
+    
+    </script>
+</body>
+</html>
