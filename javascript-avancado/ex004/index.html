@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createAttribute(), removeAttribute() e setAttributeNode()</title>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" name="" id="uNum"> <button id="btDestaque">Destacar</button><br><br>
+    <p>Curso de JavaScript</p>
+    <p>Curso de HTML/CSS</p>
+    <p>Curso de Python</p>
+    <p>Curso de Java</p>
+    <p>Curso de C++</p>
+    <p>Curso de PHP/MySQL</p>
+    <p>Curso de React.js</p>
+    <p>Curso de C#</p>
+
+
+
+    <script>
+        document.getElementById("btDestaque").addEventListener("click", function() {
+            let num = Number(document.getElementById("uNum").value)
+            let paragrafos = document.getElementsByTagName("p")
+            for(let indice = 0; indice < paragrafos.length; indice++) {
+                paragrafos[indice].removeAttribute("style")
+            }
+            let attr = document.createAttribute("style")
+            attr.value = "background-color: #f00; font-weight: bold; width: 200px; text-align: center;"
+            paragrafos[num].setAttributeNode(attr)
+        })
+    </script>
+</body>
+</html>
