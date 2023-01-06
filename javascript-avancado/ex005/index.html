@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertBefore - childNodes</title>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Criando elementos com JS</h1>
+    <input type="text" name="" id="uNovo">
+    <button id="btAdd">Adicionar</button> <button id="btContar">Contar</button> <br><br>
+    <ul id="listaElementos"></ul>
+
+    <script>
+        /*
+        O método insertBefore permite a gente especificar um elemento para inserirmos antes a este indicado. Ou seja, temos a possibilidade de especificar onde ou antes de quem que queremos inserir aquele elemento. {
+            O método funciona com dois parâmetros: O novo elemento que queremos adicionar, e o elemento que virá a ser o próximo elemento. Podemos combinar isso com o childNodes, que, como explicaremos abaixo, vira um Array.
+            Então temos:
+                let lista = document.getElementById("listaElementos")
+                let elemento = document.createElement("li")
+                let texto = document.getElementById("uNovo")
+                elemento.textContent = texto.value
+                lista.insertBefore(elemento, lista.childNodes[0]) //Como é um vetor, o segundo parâmetro vira o primeiro índice do vetor, ou seja, o ínidice 0. Vale ressaltar que quando mudamos o índice para qualquer outro, este comando só irá ocorrer quando o array chegar neste índice, ou seja, se tivermos o índice 2, depois de adicionarmos 3 elementos, o 4° elemento irá ser adicionado antes do 3° elemento.
+            }
+
+        A propriedade childNodes serve para controlarmos ou contarmos os nodes, os elementos filhos de um outro elemento, ou seja, caso tenhamos uma div com vários outros elementos, podemos controlar esses outros elementos filhos. Assim como os elementos do body são todos elementos filhos do mesmo. {
+            Se quisermos contar quantos elementos temos na página, podemos usar o childNodes.
+                Ex: 
+                let lista = document.getElementById("listaElementos")
+                let num = lista.childNodes.length // o length é necessário, se não, atribuímos a lista a um Array.
+                alert(num)
+        }
+
+        É importante relembrar que ambos os métodos parecem com o appendChild(), porém existem suas regras individuais.
+        */
+
+
+        //Contando elementos na lista
+        document.getElementById("btContar").addEventListener("click", function(){
+            let lista = document.getElementById("listaElementos")
+            let num = lista.childNodes.length
+            alert(num)
+        })
+
+        //Adicionando elementos na lista
+        document.getElementById("btAdd").addEventListener("click", function() {
+            let lista = document.getElementById("listaElementos")
+            let elemento = document.createElement("li")
+            let texto = document.getElementById("uNovo")
+            elemento.textContent = texto.value
+            lista.insertBefore(elemento, lista.childNodes[1])
+            texto.value = ""
+            texto.focus()
+        })
+    </script>
+</body>
+</html>
