@@ -13,25 +13,29 @@
 </head>
 <body>
 
-    <h1>Substituindo elementos com JS</h1>
+    <h1>Removendo elementos com JS</h1>
     <div id="cursosProgramacao">
-        <p>Curso de JavaScript</p>
-        <p>Curso de HTML/CSS</p>
-        <p>Curso de Python</p>
-        <p>Curso de Java</p>
-        <p>Curso de C++</p>
-        <p>Curso de PHP/MySQL</p>
-        <p>Curso de React.js</p>
-        <p>Curso de C#</p>
+        <p id="p1">Curso de JavaScript</p>
+        <p id="p2">Curso de HTML/CSS</p>
+        <p id="p3">Curso de Python</p>
+        <p id="p4">Curso de Java</p>
+        <p id="p5">Curso de C++</p>
+        <p id="p6">Curso de PHP/MySQL</p>
+        <p id="p7">Curso de React.js</p>
+        <p id="p8">Curso de C#</p>
     </div>
     <script>
         /*
-        O método parentNode nos retorna o elemento pai de um elemento indicado no parâmetro. {
-
+        A propriedade parentNode nos retorna o nó, o elemento pai de um outro elemento indicado no parâmetro. {
+            Então, no nosso caso, o elemento pai de todos os p é a div.
+            Caso queiramos retornar apenas o nome do elemento, basta usarmos uma outra propriedade chamada .nodeName
         }
 
-        O método remove e removeChild() servem para remover os elementos que já criamos ou então um elemento existente.
+        O método remove() e removeChild() servem para remover os elementos que já criamos ou então um elemento existente. Porém, possuem diferenças. O método remove exclui todos os elementos que estão dentro do elemento pai. Já o removeChild(), conseguimos especificar qual elemento queremos excluir.
         */
+
+        let elementos = document.getElementById("cursosProgramacao").childNodes
+        document.getElementById("cursosProgramacao").removeChild(elementos[3])
     </script>
 </body>
 </html>
