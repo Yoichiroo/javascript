@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateElement - AppendChild</title>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Criando elementos com JS</h1>
+    <input type="text" name="" id="uNovo">
+    <button id="btAdd">Adicionar</button> <br><br>
+    <ul id="listaElementos">
+    </ul>
+    <script>
+        /*
+        O método CreateElement cria um elemento HTML no document, ou em qualquer parte do documento, e então, usamos o appendChild para adicionar ao HTML em si. {
+            Para criarmos, por exemplo, um texto para um parágrafo, temos que usar o método textContent, e então, depois, adicionar com o appendChild().
+
+            Ou então, podemos usar o createTextNode().
+            Ex:
+                let p = document.createElement("p")
+                // p.textContent = "Yoichiro"
+                let texto = document.createTextNode("Estudos de JS do Yoichiro")
+                document.body.appendChild(texto)
+                //Aqui ele escreverá o texto dentro do parâmetro do método.
+        }
+            Podemos associar isso a um botão também.
+        */
+
+        document.getElementById("btAdd").addEventListener("click", function() {
+            let lista = document.getElementById("listaElementos")
+            let elemento = document.createElement("li")
+            let texto = document.getElementById("uNovo")
+            elemento.textContent = texto.value
+            lista.appendChild(elemento)
+            texto.value = ""
+            texto.focus()
+        })
+
+    </script>
+</body>
+</html>
