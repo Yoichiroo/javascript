@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scrollIntoView</title>
+    <style>
+        img.carro {
+            width: 371px;
+            height: 750px;
+            display: block;
+            margin-bottom: 50px;
+        }
+
+        img.menu-item {
+            height: 100%;
+            cursor: pointer;
+        }
+
+        div#menu {
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            width: 500px;
+            height: 100px;
+            position: fixed;
+            top: 10px;
+            left: 400px;
+            background-color: white;
+        }
+
+        body {
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu">
+        <img src="c1.png" data-nome="c1" alt="" id="btC1" class="menu-item">
+        <img src="c2.png" data-nome="c2" alt="" id="btC2" class="menu-item">
+        <img src="c3.png" data-nome="c3" alt="" id="btC3" class="menu-item">
+        <img src="c4.png" data-nome="c4" alt="" id="btC4" class="menu-item">
+    </div>
+        <img src="c1.png" alt="" id="c1" class="carro">
+        <img src="c2.png" alt="" id="c2" class="carro">
+        <img src="c3.png" alt="" id="c3" class="carro">
+        <img src="c4.png" alt="" id="c4" class="carro">
+
+
+    <script>
+        /*
+        O método é muito simples, basicamente serve para a gente poder rolar a página, ou seja, ele nos permite posicionar um conteúdo da maneira que quisermos, basta especificar o local que queremos posicionar. Esse local pode ser um elemento HTML ou então uma variável.
+        Podemos atribuir este scrollIntoView() com o dataset, caso queiramos.
+        */
+
+        function rolar() {
+            let objeto = event.target.dataset.nome
+            document.getElementById(objeto).scrollIntoView()
+        }
+
+        function iniciar() {
+            document.getElementById("btC1").addEventListener("click", rolar)
+            document.getElementById("btC2").addEventListener("click", rolar)
+            document.getElementById("btC3").addEventListener("click", rolar)
+            document.getElementById("btC4").addEventListener("click", rolar)
+        }
+
+        window.addEventListener("load", iniciar)
+
+    </script>
+</body>
+</html>
