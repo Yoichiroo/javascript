@@ -5,13 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elemento ativo na página</title>
-    <style></style>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <script>
+    <textarea rows="5" cols="20" id="txtOriginal">GitHub - Yoichiroo - Curso de JavaScript Avançado - activeElement</textarea> <br>
+    <button id="btCopiar">Copiar</button> <br>
+    <p>Texto Selecionado: <span id="txtSelecionado"></span></p> <br>
+<script>
         /*
-        O atributo activeElement da classe document retorna para nós o elemento que está selecionado e ativo dentro da página. Aprenderemos como usá-lo hoje. 
+        O atributo activeElement da classe document retorna para nós o elemento que está selecionado, em foca, ativo dentro da página. Aprenderemos como usá-lo hoje. 
+        Temos 3 maneiras de utilizá-lo.
+            A 1° maneira, é a maneira "menos sofisticada" {
+                Temos uma função com este atributo que irá retornar o elemento que está sendo clicado no momento. Atribuímos o onclick com a função ativo() no body e ele reage a qualquer clique que o usuário irá dar.
+            }
+            A 2° maneira é uma maneira "mais sofisticada" {
+                Temos uma função novamente, porém, usamos o método requestAnimationFrame(). Iniciamos as variáveis com escopo global para escrevermos o elemento ativo na página HTML, e então, fazemos o processo para escrever o elemento em si. Deste jeito:
+                    
+                    let divCaixa, frames
+                    
+                    function loopAtivo() {
+                        frames  = requestAnimationFrame(loopAtivo)
+                        divCaixa.innerHTML = document.activeElement.tagName
+                    }
+                    
+                    function iniciar() {
+                        divCaixa = document.getElementById("caixa")
+                        loopAtivo()
+                    }
+
+                    window.addEventListener("load", iniciar) 
+                    }
+            }
+            A 3° maneira é a mais para retornar o conteúdo do elemento ativo, então temos {
+                Essa maneira, embora mais difícil, é a mais recomendada. Primeiro, queremos selecionar uma parte de algum conteúdo e queremos que esta parte selecionada retorne no HTML. Como fazemos isso? Temos:
+                1 - A variável para pegar o texto original.
+                2 - O escutador para o evento "mouseup", que servirá para quando formos selecionar o que queremos com o mouse.
+                3 - A função que o escutador irá chamar quando o evento acontecer.
+                Dentro da função, nós atribuímos às variáveis os elementos da caixa de resultado, o elemento ativo que pegamos com o activeElement e a caixa de seleção do nosso mouse. {
+                    Para tal, usamos o método substring(), e dento dos parâmetros, nós captamos o início da seleção e o final da seleção.
+                    }
+                Por fim, atribuímos o innerHTML da caixa de resultado à seleção que fizemos. Deste jeito:
+
+                    let texto = document.getElementById("txtOriginal")
+                    texto.addEventListener("mouseup", copiarTexto)
+
+                    function copiarTexto() {
+                        let caixaRes = document.getElementById("txtSelecionado")
+                        let elemento = document.activeElement
+                        let selecao = elemento.value.substring(elemento.selectionStart, elemento.selectionEnd)
+                        caixaRes.innerHTML = selecao
+                    }
+                Porém, tem como escrever tudo em uma linha só, deste jeito:
+                
+                document.getElementById("txtSelecionado").innerHTML = document.activeElement.value.substring(document.activeElement.selectionStart, document.activeElement.selectionEnd)
+                
+                Fica muito confuso, de verdade, porém, é quase a mesma coisa que as de cima.
+                }
+
         */
+            
+        let texto = document.getElementById("txtOriginal")
+        texto.addEventListener("mouseup", copiarTexto)
+
+        function copiarTexto() {
+            let caixaRes = document.getElementById("txtSelecionado")
+            let elemento = document.activeElement
+            let selecao = elemento.value.substring(elemento.selectionStart, elemento.selectionEnd)
+            caixaRes.innerHTML = selecao
+        }
+
+        
     </script>
 </body>
 </html>
