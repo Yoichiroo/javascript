@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Propriedades personalizadas - dataset</title>
     <style>
+
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
         div.carro {
             width: 371px;
             height: 750px;
@@ -25,10 +30,10 @@
 <body>
 
     <div id="painel"></div>
-    <div id="c1" class="carro" data-cor="Cinza" data-potencia="110" data-velocidade="180"><img src="c1.png" alt=""></div>
-    <div id="c2" class="carro" data-cor="Branco" data-potencia="" data-velocidade=""><img src="c2.png" alt=""></div>
-    <div id="c3" class="carro"><img src="c3.png" alt=""></div>
-    <div id="c4" class="carro"><img src="c4.png" alt=""></div>
+    <div id="c1" class="carro"><img src="c1.png" alt="" data-modelo="Popular" data-cor="Cinza" data-potencia="80" data-velocidade="120"></div>
+    <div id="c2" class="carro"><img src="c2.png" alt="" data-modelo="Corrida" data-cor="Branco" data-potencia="350" data-velocidade="420"></div>
+    <div id="c3" class="carro"><img src="c3.png" alt="" data-modelo="Família" data-cor="Azul" data-potencia="110" data-velocidade="180"></div>
+    <div id="c4" class="carro"><img src="c4.png" alt="" data-modelo="Esportivo" data-cor="Laranja" data-potencia="220" data-velocidade="260"></div>
 
     <script>
         /*
@@ -38,6 +43,26 @@
         Assim, conseguimos ler facilmente o dataset de algum elemento em JS.
             A grande vantagem é que conseguimos atribuir dados, como se fossem constantes, à um elemento. Podemos pegar dados de bancos de dados com PHP e MySQL, podemos usar API's e bastante outras coisas.
         */
+
+
+        function iniciar() {
+            document.getElementById("c1").addEventListener("click", definirPainel)
+            document.getElementById("c2").addEventListener("click", definirPainel)
+            document.getElementById("c3").addEventListener("click", definirPainel)
+            document.getElementById("c4").addEventListener("click", definirPainel)
+        }
+
+        function definirPainel() {
+            let objeto = event.target
+            let painel = document.getElementById("painel")
+            painel.innerHTML = "Modelo - " + objeto.dataset.modelo + "<br>"
+            painel.innerHTML += "Cor - " + objeto.dataset.cor + "<br>"
+            painel.innerHTML += "Potência - " + objeto.dataset.potencia + " cv" + "<br>"
+            painel.innerHTML += "Velocidade - " + objeto.dataset.velocidade + " Km/h" + "<br>"
+            console.log(objeto)
+        }
+
+        window.addEventListener("load", iniciar)
     </script>
 </body>
 </html>
