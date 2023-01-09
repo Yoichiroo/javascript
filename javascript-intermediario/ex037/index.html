@@ -5,11 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Propriedades personalizadas - dataset</title>
+    <style>
+        div.carro {
+            width: 371px;
+            height: 750px;
+            display: inline;
+            cursor: pointer;
+        }
+
+        div#painel {
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            width: 500px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
+
+    <div id="painel"></div>
+    <div id="c1" class="carro" data-cor="Cinza" data-potencia="110" data-velocidade="180"><img src="c1.png" alt=""></div>
+    <div id="c2" class="carro" data-cor="Branco" data-potencia="" data-velocidade=""><img src="c2.png" alt=""></div>
+    <div id="c3" class="carro"><img src="c3.png" alt=""></div>
+    <div id="c4" class="carro"><img src="c4.png" alt=""></div>
+
     <script>
         /*
-        
+        O recurso nos permite adicionar propriedades personalizadas ao elementos e, em JS, conseguimos ler ou alterar o valor de uma propriedade. Para usarmos, temos que inserir o "data-nome_do_valor = "valor"" no atributo HTML, basicamente. Se quisermos adicionar 2 dataset, usaremos:
+            data-nome = "Lucas"
+            data-valor = "100"
+        Assim, conseguimos ler facilmente o dataset de algum elemento em JS.
+            A grande vantagem é que conseguimos atribuir dados, como se fossem constantes, à um elemento. Podemos pegar dados de bancos de dados com PHP e MySQL, podemos usar API's e bastante outras coisas.
         */
     </script>
 </body>
