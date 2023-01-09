@@ -9,15 +9,42 @@
         body {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
+
+        div#painel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+        }
     </style>
 </head>
 <body>
 
-    
+    <div id="painel"></div>
+    <div id="divMensagem">Página <span id="spanResultado"></span> está em foco.</div>
+    <img src="../ex008/s3.jpg" alt="">
     <script>
         /*
         O método hasFocus() pertence a classe document, e trabalha da seguinte forma; Caso uma página esteja em foco, o método retorna true, caso não, retorna false. Usaremos muito este método com a estrutura condicional(if).
+        E para aprendermos, podemos usar o setInterval ou requestAnimationFrame(), aqui, no nosso caso, usaremos o setInterval()
         */
-    </script>
+        
+        setInterval(foco, 0)
+        
+        function foco() {
+            let painel = document.getElementById("painel")
+            let res = document.getElementById("spanResultado")
+            if(document.hasFocus()) {
+                res.innerHMTL = ""
+            } else {
+                res.innerHTML = ">> não <<"
+                painel.style.display = "block"
+            }
+        }
+
+        </script>
 </body>
 </html>
