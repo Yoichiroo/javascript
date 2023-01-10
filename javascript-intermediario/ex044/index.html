@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador Spread</title>
+</head>
+<body>
+    <script>
+        /*
+        O operador spread irá espalhar os elementos que estão em um Array ou um objeto e irá transformá-los em objetos/elementos individuais. Funciona apenas com elementos iteráveis.
+            Se usa o operador com '...'
+        Quando espalhamos um array e etc, não podemos usar as propriedades que geralmente usaríamos, pois o elemento já não pode ser mais iterado.
+        Podemos utilizá-lo em uma função, por exemplo, para fazermos a soma dos números de um Array.
+        */
+
+        const notas = [100, 200, 300]
+        const jogador = [
+            nome = "Bruno",
+            pontos = 1000,
+            vidas = 7
+        ]
+
+
+        function soma(n1, n2, n3) {
+            return n1 + n2 + n3
+        }
+        
+        console.log(...jogador)
+
+    </script>
+</body>
+</html>
