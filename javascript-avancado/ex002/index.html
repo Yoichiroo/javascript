@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parâmetros REST</title>
+</head>
+<body>
+    <script>
+
+        /*
+        O parâmetro rest para criar funções com uma quantidade indeterminada de parâmetros, ou seja, podemos usar quantos parâmetros quisermos {
+            Umas maneiras de usar é semelhante ao método spread, porém, como parâmetro da função genérica. Para somarmos todos os parâmetros, podemos usar uma estrutura de repetição bem simples que serve para percorrer o Array. 
+            Ex:
+                function soma(...num) {
+                    //Aqui ele espalha o parâmetro em um Array, transformando todos os valores passados pro parâmetro em um elemento individual.
+                    let res = 0
+                    let qtd = num.length
+                    //Variável para que possamos percorrer o Array com o índice
+                    for (let i = 0; i < qtd; i++) {
+                        res += num[i]
+                    } // OPERAÇÃO DE SOMA
+                    return res
+                    //Por fim, ele retorna o resultado obtido da operação
+                }
+                Podemos reduzir com o for of, assim:
+                
+                function soma(...num) {
+                    let res = 0 
+                    for (let n of num) {
+                        res += n
+                    }
+                    return res
+                }
+
+        }
+        */
+
+        function soma(...num) {
+            let res = 0 
+            for (let n of num) {
+                res += n
+            }
+            return res
+        }
+
+        console.log(soma(756, 812, 794, 801, 383, 624, 783, 790, 731))
+    </script>
+</body>
+</html>
