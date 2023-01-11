@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções Construtoras</title>
+</head>
+<body>
+    <script>
+        /*
+        Funções construtoras são aquelas funções na qual queremos um retorno rápido, sem muita enrolação e pequeno. Utilizaremos o construtor Function junto com o operador new, onde passaremos duas strings, nas quais simbolizarão, respectivamente, o conjunto de parâmetros que entrará na função, e o que a função irá fazer.
+            Ex:
+                let soma = new Function("n1, n2", "return n1 + n2")
+        */
+
+        let soma = new Function("n1, n2", "return n1 + n2")
+
+        console.log(soma(1, 2,))
+    </script>
+</body>
+</html>
