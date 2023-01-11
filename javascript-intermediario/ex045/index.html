@@ -10,24 +10,11 @@
 
     <script>
 
-        const produtos = [
-            {
-                id:'001',
-                descricao: ['Mouse', '25.00']
-            },
-
-            {
-                id:'002',
-                descricao: ['Teclado', '50.00']
-            },
-            
-            {
-                id:'003',
-                descricao: ['Monitor', '430.00']
-            }
-        ]
-
-        console.log(produtos)
+        const aluno = {nome: "Lucas", sobrenome: "Torres"}
+        const notas = {n1: 80, n2: 75, n3: 92, n4: 85}
+        const info = {...aluno, ...notas}
+        console.log(info)
+        
     </script>
 </body>
 </html>
