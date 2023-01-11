@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções Geradores</title>
+</head>
+<body>
+    <script>
+        /*
+        Funções geradoras é uma função que permite a devolução do controle para quem chamou esta função. Ou seja. aa função é chamada, será executada e retornará para quem chamou. As funções geradoras permitem a gente parar uma função no meio e chamar outra função, caso precisemos de algo desta função que chamamos.
+
+        Como criamos funções geradoras?
+        Basta definir o asterisco depois do function.
+        A função devolve o iterator a quem chamou a função. Ou seja, ela não é executada de primeira. Podemos usá-las com estruturas de repetições. Para devolvermos o iterator à quem chamou a função, basta pormos um 'yield' antes de cada elemento que queremos gerar na função.
+            Ex:
+                function* cores() {
+                    yield "Vermelho",
+                    yield "Azul",
+                    yield "Verde",
+                    yield "Amarelo",
+                    yield "Roxo",
+                    yield "Preto",
+                    yield "Branco"
+                }
+
+                for (let c of cores()) {
+                    console.log(c)
+                }
+
+        Caso associemos à uma variável, temos que por a propriedade .next(), para retornar o primeiro elemento encontrado na função, ou seja, o primeiro yield.
+        */
+
+        function* contagem(n) {
+            let c = 0
+            while (c < n) {
+                console.log(c)
+                c++
+            }
+        }
+
+        const ct = contagem(10)
+        console.log(ct.next())
+    </script>
+</body>
+</html>
