@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções Anônimas</title>
+</head>
+<body>
+    <script>
+        /*
+        Funções anônimas são funções que não se associam à nomes. Utilizam uma sintaxe diferente das funções normais. Caso imprimirmos uma variável com uma função anônima, não aparecerá o que queremos, basicamente falando, será imprimido as linhas de código que escrevemos, e não o que pedimos para ser imprimido. Para resolvermos, basta chamarmos a variável na qual a função está associada, juntamente de um par de parênteses ao lado.
+            Ex: console.log(galo())
+            E assim ele retornará o valor retornado pela função.
+            Podemos atribuir à uma outra variável a variável - que pode ser constante - que temos a função anônima.
+        
+            Ou seja, a função anônima, basicamente, é uma função na qual não possui associação a um identificador, e que pode ser usada dinamicamente.
+        */
+
+
+        const soma = function(...num) {
+            let res = 0
+            for (let n of num) {
+                res += n
+            }
+            return res
+        }
+
+        let s = soma
+
+        console.log(soma(1, 2, 3))
+        console.log(soma(4, 5, 6))
+        console.log(soma(7, 8, 9))
+    </script>
+</body>
+</html>
