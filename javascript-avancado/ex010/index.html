@@ -10,8 +10,36 @@
 
     <script>
         /*
-        
+        O objeto map é uma coleção de par, do tipo chave valor. Tanto as chaves quanto valores podem ser de qualquer tipo - tipo primitivo, objetos, arrays e etc-. Para inserirmos elementos nesta coleção, usamos o método set(), tendo como parâmetros a chave e o valor que queremos para a chave. Para iniciarmos a coleção do map, temos que atribuir à uma variável os valores "new Map()".
+
+        Como podemos obter determinado elemento do nosso map?
+            Temos o método get(), onde iremos obter o elemento através da chave.
+            
+
+        No método set(), caso já tivermos criado uma chave valor, e criarmos uma nova chave valor com a mesma identificação, a nova chave irá sobreescrever a chave antiga.
+
+        Podemos incializar o map com elementos já postos dentro. Cada elemento será posto em forma de Array, assim como o map.
+            Ex:
+                let produtos = new Map([
+                    ["01", "Mouse"],
+                    ["02", "Teclado"],
+                    ["03", "Monitor"],
+                    ["04", "Gabinete"]
+                ])
         */
+
+        let produtos = new Map([
+            ["01", "Mouse"],
+            ["02", "Teclado"],
+            ["03", "Monitor"],
+            ["04", "Gabinete"]
+        ])
+
+        produtos.set("05", "Memória")
+        
+        for (let indice of produtos) {
+            console.log(indice[0])
+        }
     </script>
 </body>
 </html>
