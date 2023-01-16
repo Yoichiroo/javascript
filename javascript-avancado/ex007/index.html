@@ -40,17 +40,33 @@
                 Carro.info()
                 c2.info()
                 c3.info()
+
+        Temos o método assign(), que faz a mesclagem de dois objetos.
+        
+        DESESTRUTURAÇÃO se refere ao fato de podermos extrair dados de um determinado objeto. Conseguimos extrair quaisquer dados que queremos do nosso objeto.
+        Podemos atribuir à variáveis este método de desestruturação. Ex:
+                let {marca, modelo} =  Carro
+                //Aqui nós criamos duas variáveis entre chaves, que serão, os dados extraídos do elemento atribuído às variáveis, que no nosso caso, é o objeto Carro.
+    
         */
 
         const Carro = {
             marca: "VW",
             modelo: "Golf",
+            cor: "Cinza",
+            cambio: "Automático",
             info: function() {
                 console.log("Marca: " + this.marca)
                 console.log("Modelo: " + this.modelo)
+                console.log("Cor: " + this.cor)
+                console.log("Câmbio: " + this.cambio)
             }
         }
 
+        let {marca, modelo} =  Carro
+
+        console.log(marca)
+        console.log(modelo)
     </script>
 </body>
 </html>
