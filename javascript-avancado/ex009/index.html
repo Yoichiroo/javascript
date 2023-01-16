@@ -7,6 +7,31 @@
     <title>Iterator</title>
 </head>
 <body>
-    
+    <script>
+        /*
+        Sempre que temos uma coleção iterável, ou seja, que já possui o iterator, podemos manipular diretamente o iterator desta coleção e trabalhar, por exemplo, de elemento a elemento.
+        Sempre que usamos um for para percorrer um Array, quem que fica no controle para retornar o elemento é o Iterator. Ele dá o .next() no Array.
+        
+        Vamos usar o iterator diretamente:
+            let it = num[Symbol.iterator]()
+            //Sintaxe padrão de um iterator direto. A cada .next() que escrevermos, ele vai retornando o próximo elemento no Array.
+
+            
+            console.log(it.next().value)
+            console.log(it.next().value)
+            console.log(it.next().value)
+            console.log(it.next().value)
+            console.log(it.next().value)
+            
+        Quando usamos o For Of, não estamos usamos nada mais nada menos que o próprio iterator, ou seja, ele está retornando o valor na posição indicada pelo índice e e está dando .next() automaticamente.   
+        */
+
+        let num = [5, 1, 4, 2, 3]
+        let it = num[Symbol.iterator]()
+        for(let indice = 0; indice < num.length; indice++) {
+            let v = it.next().value
+            v % 2 == 0? console.log("Par") : console.log("Ímpar")
+        }
+</script>
 </body>
 </html>
