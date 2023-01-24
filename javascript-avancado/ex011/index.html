@@ -19,8 +19,12 @@
                     console.log(p[1][1])
                 }
 
-        O método foreach() permite a gente executar uma função callback para cada um dos elementos do nosso Map. Ou seja, ele percorre os elementos utitlizando-os em uma função.
+        O método forEach() permite a gente executar uma função callback para cada um dos elementos do nosso Map. Ou seja, ele percorre os elementos utitlizando-os em uma função. Utiliza como parâmetro a função que iremos chamar para cada elemento. A função que será chamada deve ter 2 parâmetros chave e valor, ja que estamos tratando de Map aqui.
+
+        O método keys() vai retornar o objeto do tipo iterator que vai redefinir todas as chaves do Map.
+            Assim como temos keys, também temos o método values(), que faz a mesma coisa, só que com os valores do Map.
         
+        O método has() verifica se temos um determinado elemento da lista; Se tiver, retorna true; Se não, retorna false.
         */
 
         let produtos = new Map([
@@ -30,16 +34,20 @@
             ["04", "Gabinete"]
         ])
 
-        produtos.set("05", "Memória" "R$199,90")
-
         // produtos.clear()
-        produtos.delete("03")
-        console.log("Tamanho: " + produtos.size)
+        // produtos.delete("03")
 
-        for (p of produtos) {
-            console.log(p)
+        produtos.set("05", "Memória")
+
+        function info(chave, valor) {
+            console.log("Chave: " + chave + " - Valor: " + valor)
         }
 
+        // produtos.forEach(info)
+        // let iterator = produtos.values()
+        // console.log(iterator.next().value)
+
+        console.log(produtos.has("02") ? "Produto encontrado" : "Não está na lista.")
     </script>
 </body>
 </html>
