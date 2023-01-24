@@ -10,6 +10,10 @@
     <script>
         /*
         Setters são métodos especiais que utilizaremos para alterar valores dos atributos da nossa classe. Os métodos info(), ligarCarro() e desligarCarro() que criamos abaixo pode ser associado a um Setter. Setter é um método que usamos para podermos atribuir um valor a um atributo do objeto. Para especificarmos um setter, temos que pôr um set antes do nome do método. Ao alterarmos o valor, temos que passar como se fosse uma atribuição à uma variável.
+        
+        Getters são os métodos que vamos usar para obter o valor de um atributo. Também utilizamos o get antes do nome do método.
+        
+        Podemos criar um Getter e um Setter para cada propriedade da nossa classe.
         */
 
         class Carro {
@@ -42,8 +46,16 @@
             }
 
             set Comb(valor) {
-                this.combustivel = valor
-                console.log("Combustível alterado, valor atual: " + this.combustivel)
+                if(valor < 0 || valor > 100) {
+                    alert("Valor inválido!")
+                } else {
+                    this.combustivel = valor
+                    console.log("Combustível alterado, valor atual: " + this.combustivel)
+                }
+            }
+
+            get valorComb() {
+                return this.combustivel
             }
         }
 
@@ -56,9 +68,11 @@
         c1.ligarCarro()
         c4.ligarCarro()
 
-        c1.Comb = 100 
-
+        c1.Comb = 100
+        
         c1.info()
+        console.log(c1.valorComb)
+
         // c2.info()
         // c3.info()
         // c4.info()
