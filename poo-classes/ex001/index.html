@@ -8,7 +8,60 @@
 </head>
 <body>
     <script>
+        /*
+        POO = Programação Orientada a Objetos
+
+        O que é Orientaçaão a Objetos?
+            É um paradigma do desenvolvimento de software no qual o mesmo tenta imitar a realidade. Basicamente, a programação vai considerar um programa como uma coleção de objetos que podem se comunicar entre si através de métodos, propriedades e atributos.
+
+        Primeiramente precisamos definir uma classe, que é como se fosse o esqueleto do objeto, e então, através dessa classe, podemos instanciar novos objetos. Chamamos essas classes instanciadas de "classes vivas." Podemos criar quantas instâncias forem necessárias desta mesma classe.
         
+        Para criarmos uma classe, usaremos a palavra "class", podemos associá-la à uma variável. Agora, criamos a classe Carro. Porém, não temos carros, instâncias novas desta classe. Podemos declarar uma variável, com o valor "new" seguidamente do tipo do objeto que queremos instanciar, como atributo.
+            Ex:
+                let c1 = new Carro()
+        
+        As instâncias são independentes umas das outras, ou seja, posso manipular apenas uma instância, sem mudar as outras. Essas instâncias tem "vidas" diferentes.
+            Ex:
+                let c2 = new Carro()
+                let c3 = new Carro()
+                let c4 = new Carro()
+        
+        O método constructor(), sempre que instanciarmos algum objeto com o new, será chamado. Ele irá fazer o que estiver programado para fazer.
+        
+        Atributos das classes são as variáveis que aplicamos a uma classe. Podemos criar o atributo tanto pela classe ou pelo construtor. Para criarmos este atributo, não é necessário let, var ou const. Podemos inicializá-lo já com o nome apenas. Temos que adicionar um "this", já que se não fizermos isto, estaremos atribuindo as propriedades ao método, e não ao objeto dentro do constructor(). Se quisermos aplicar um atributo diferente para cada objeto? Temos {
+            
+            O constructor() é um método, ou seja, temos como passar parâmetros para ele. Nas instâncias, temos que passar os parâmetros necessários para que o construtor possa agir. Ex:
+
+                    class Carro {
+                        //CLASSE COM CONSTRUTOR
+                        constructor(cor) {
+                            //PARÂMETRO COR SENDO EXIGIDO
+                            this.cor = cor
+                            console.log("Olá, sou um novo carro: " + this.cor)
+                            //REFERÊNCIA AO ATRIBUTO DENTRO DO CONSTRUCTOR
+                        }
+                    }
+
+                    let c1 = new Carro("Vermelho")
+                    let c2 = new Carro("Verde")
+                    let c3 = new Carro("Azul")
+                    let c4 = new Carro("Amarelo")
+                    //PARÂMETROS REQUISITADOS
+            }
+        */
+
+        class Carro {
+            // cor = "Vermelho"
+            constructor(cor) {
+                this.cor = cor
+                console.log("Olá, sou um novo carro: " + this.cor)
+            }
+        }
+
+        let c1 = new Carro("Vermelho")
+        let c2 = new Carro("Verde")
+        let c3 = new Carro("Azul")
+        let c4 = new Carro("Amarelo")
     </script>
 </body>
 </html>
