@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Map - P2</title>
+</head>
+<body>
+    <script>
+        /*
+        O método clear() serve para apagarmos todos os elementos do nosso Map. 
+
+        Caso não queiramos apagar todos os elementos do nosso Map, e apenas um específico, temos o método delete(), passando como parâmetro a chave que queremos deletar.
+
+        Podemos adicionar TUDO o que quisermos em um Map, inclusive um Array. Para acessarmos estas informações do Array, podemos adicionar mais um "[]" ao console.log() 
+            Ex: 
+                for (p of produtos) {
+                    console.log(p[1][1])
+                }
+
+        O método foreach() permite a gente executar uma função callback para cada um dos elementos do nosso Map. Ou seja, ele percorre os elementos utitlizando-os em uma função.
+        
+        */
+
+        let produtos = new Map([
+            ["01", "Mouse"],
+            ["02", "Teclado"],
+            ["03", "Monitor"],
+            ["04", "Gabinete"]
+        ])
+
+        produtos.set("05", "Memória" "R$199,90")
+
+        // produtos.clear()
+        produtos.delete("03")
+        console.log("Tamanho: " + produtos.size)
+
+        for (p of produtos) {
+            console.log(p)
+        }
+
+    </script>
+</body>
+</html>
