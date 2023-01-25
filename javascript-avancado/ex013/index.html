@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método Map</title>
+</head>
+<body>
+    <script>
+        /*
+        O método map gerará um novo Array com elementos já existentes de um outro Array, e então, aplicará funcionalidades, operações a cada elemento deste Array original e irá criar um Array com esses elementos modificados.
+        */
+
+        let num = [1, 4, 9, 16, 25]
+        let raiz = num.map(Math.sqrt)
+
+        for(let i = 0; i < num.length; i++) {
+            console.log("Número: " + num[i] + " - " + "Raíz: " + raiz[i])
+        }
+
+        let dobro = num.map((n) => {
+            return n * 2
+        })
+
+        console.log("------------------")
+
+        for(let i = 0; i < num.length; i++) {
+            console.log("Número: " + num[i] + " - " + "Dobro: " + dobro[i])
+        }
+</script>
+</body>
+</html>
