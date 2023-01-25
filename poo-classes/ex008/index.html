@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+<body>
+    <script>
+
+        /*
+        O Async e o Await irão guardar o resultado da promise, e respectivamente, irá seguir com os resultados enviados e garantir que o resultado será retornado.
+
+        CÓDIGOS QUE SUBSTITUÍMOS COM ASYNC:
+
+            contarTempoPromise(10)
+                .then(sucesso => console.log("Sucesso: " + sucesso))
+                .catch(erro => console.log(erro))
+
+            contarP(10)
+                .then(sucesso => console.log(sucesso))
+                .catch(erro => console.log(erro))    
+        */
+
+        function contar(n) {
+            let cont = 0
+            for (let indice = 0; indice < n; indice++) {
+                cont++
+            }
+            //return cont
+            console.log(cont)
+        }
+        
+        function contarT(n) {
+            let cont = 0
+            let t = setTimeout(() => {
+                for (let indice = 0; indice < n; indice++) {
+                    cont++
+                }
+            }, 2000)
+            //return cont
+            console.log(cont)
+        }
+
+        function contarP(n) {
+            let cont = 0
+            let p = new Promise((resolve, rejected) => {
+                for (let indice = 0; indice < n; indice++) {
+                    cont++
+                }
+                if(cont == n) {
+                    resolve(cont)
+                } else {
+                    rejected("ERRO")
+                }
+            })
+            // return p
+            console.log(p)
+        }
+
+        
+        function contarTempoPromise(n) {
+            let cont = 0
+            let p = new Promise ((resolve, rejected) => {
+                window.setTimeout(() => {
+                    for(let i = 0; i < n; i++) {
+                        cont++
+                    }
+                    if (cont == n) {
+                        resolve(cont)
+                    } else {
+                        rejected("ERRO")
+                    }
+                })
+                }, 2000)
+                // return p
+                console.log(p)
+            }
+            
+            async function contarPromiseAsync(n) {
+                const r = await contarP(n)
+                console.log(r)
+            }
+            async function contarPromiseTempoAsync(n) {
+                const r = await contarTempoPromise(n)
+                console.log(r)
+            }
+
+            contar(10000)
+            contarT(10)
+            contarPromiseTempoAsync(10)
+            contarPromiseAsync(20)
+    </script>
+</body>
+</html>
