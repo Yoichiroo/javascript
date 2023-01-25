@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO Classes - Prototype</title>
+</head>
+<body>
+    <script>
+
+        /*
+        
+        */
+
+        class Carro {
+            // cor = "Vermelho"
+            static alerta = true
+            constructor(tipoCombustivel, tipoCarro, pesoCarro) {
+                this.tipo = tipoCarro // 1 = Passeio, 2 = Transporte, 3 = Forte
+                this.qtdeComb = 100
+                this.ligado = false
+                this.tipoDeComb = tipoCombustivel // 1 = Gasolina, 2 = Diesel, 3 = Etanol
+                this.pesoCarro = pesoCarro
+            }
+
+            info() {
+                console.log("Qtd. Comb..: " + this.qtdeComb)
+                console.log("Tipo Combus: " + this.tipoDeComb)
+                if(this.tipo == 1) {
+                    console.log("Tipo Carro.: Passeio")
+                } else if (this.tipo == 2) {
+                    console.log("Tipo Carro.: Transporte")
+                } else {
+                    console.log("Tipo Carro.: Forte")
+                }
+                console.log("Ligado.....: " + (this.ligado ? "SIM" : "NÃO"))
+                console.log("Peso....: " + this.pesoCarro + "kg")
+            }
+
+            set setLigado(t) {
+                this.ligado = t
+            }
+
+            get getLigado() {
+                return this.ligado
+            }
+
+            set Comb(v) {
+                if (v < 0 || v > 100) {
+                    alert("Valor inválido")
+                } else {
+                    this.qtdeComb = v
+                }
+            }
+
+            getComb() {
+                return this.qtdeComb
+            }
+        }
+
+        class CarroForte extends Carro {
+            constructor(potTiro) {
+                super(3, 3, 270)
+                this.municao = 1000
+                this.potMunicao = potTiro
+                this.blindagem = 100
+            }
+            info() {
+                super.info()
+                console.log("Qtde Munição: " + this.municao)
+                console.log("Pot. Tiros.:" + this.potMunicao)
+                console.log("Blindagem..: " + this.blindagem)
+                console.log("------------------------------")
+            }
+        }
+    
+        class carroTransporte extends Carro {
+            constructor() {
+                super(2,2, 120)
+            }
+        }
+
+
+        let c1 = new CarroForte(100)
+        let c2 = new carroTransporte(50)
+
+        c1.setLigado = true
+        c1.info()
+        c2.info()
+    </script>
+</body>
+</html>
