@@ -7,6 +7,100 @@
     <title>POO Classes - Herança</title>
 </head>
 <body>
+    <h1>Verifique o console!</h1>
+    <script>
+        /*
+        Uma herança é quando uma classe recebe outra classe. A classe pai é a classe que está sendo herdada, já a classe filho é a que está herdando. Todas as propriedades que a classe pai tiver, a classe filho irá herdar, assim podendo usar para outras coisas.
+        
+        Para criarmos esta condição, basta definir a classe pai e dizer qual classe a mesma irá herdar. Exemplo: 
+            classe CarroForte extends Carro {
+                //Assim, a classe pai herda todas as propriedades da classe filho, que são, respectivamente CarroForte e Carro.
+            }
+        Caso queiramos acessar o construtor da classe filho pela classe pai, podemos criar um construtor dentro da classe pai e adicionar um "super(1)" dentro dele, para que se torne possível o acesso. 
+        Ex:
+            class CarroForte extends Carro {
+                constructor() {
+                    super(1)
+                    //Como o construtor original só possui um parâmetro, apenas passamos um parâmetro.
+                }
+            }
+        */
+
+        class Carro {
+            // cor = "Vermelho"
+            static alerta = true
+            constructor(tipoCombustivel, tipoCarro, pesoCarro) {
+                this.tipo = tipoCarro // 1 = Passeio, 2 = Transporte, 3 = Forte
+                this.qtdeComb = 100
+                this.ligado = false
+                this.tipoDeComb = tipoCombustivel // 1 = Gasolina, 2 = Diesel, 3 = Etanol
+                this.pesoCarro = pesoCarro
+            }
+
+            info() {
+                console.log("Qtd. Comb..: " + this.qtdeComb)
+                console.log("Tipo Combus: " + this.tipoDeComb)
+                if(this.tipo == 1) {
+                    console.log("Tipo Carro.: Passeio")
+                } else if (this.tipo == 2) {
+                    console.log("Tipo Carro.: Transporte")
+                } else {
+                    console.log("Tipo Carro.: Forte")
+                }
+                console.log("Ligado.....: " + (this.ligado ? "SIM" : "NÃO"))
+                console.log("Peso....: " + this.pesoCarro + "kg")
+            }
+
+            set setLigado(t) {
+                this.ligado = t
+            }
+
+            get getLigado() {
+                return this.ligado
+            }
+
+            set Comb(v) {
+                if (v < 0 || v > 100) {
+                    alert("Valor inválido")
+                } else {
+                    this.qtdeComb = v
+                }
+            }
+
+            getComb() {
+                return this.qtdeComb
+            }
+        }
+
+        class CarroForte extends Carro {
+            constructor(potTiro) {
+                super(3, 3, 270)
+                this.municao = 1000
+                this.potMunicao = potTiro
+                this.blindagem = 100
+            }
+            info() {
+                super.info()
+                console.log("Qtde Munição: " + this.municao)
+                console.log("Pot. Tiros.:" + this.potMunicao)
+                console.log("Blindagem..: " + this.blindagem)
+                console.log("------------------------------")
+            }
+        }
     
+        class carroTransporte extends Carro {
+            constructor() {
+                super(2,2, 120)
+            }
+        }
+
+
+        let c1 = new CarroForte(100)
+        let c2 = new carroTransporte(50)
+
+        c1.setLigado = true
+        c1.info()
+        c2.info()
+    </script>
 </body>
 </html>
