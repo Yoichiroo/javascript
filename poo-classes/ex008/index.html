@@ -55,8 +55,7 @@
                     rejected("ERRO")
                 }
             })
-            // return p
-            console.log(p)
+            return p
         }
 
         
@@ -74,8 +73,7 @@
                     }
                 })
                 }, 2000)
-                // return p
-                console.log(p)
+                return p
             }
             
             async function contarPromiseAsync(n) {
@@ -89,8 +87,8 @@
 
             contar(10000)
             contarT(10)
-            contarPromiseTempoAsync(10)
             contarPromiseAsync(20)
+            contarPromiseTempoAsync(10)
     </script>
 </body>
 </html>
