@@ -7,11 +7,15 @@
     <title>POO Classes - Prototype</title>
 </head>
 <body>
+    <h1>Verifique o console!</h1>
     <script>
 
         /*
-        
-        */
+        O prototype, de forma simples, representará o protótipo da classe. Usando o prototype podemos criar ou sobreescrever métodos e propriedades da classe. 
+            Utiliza da sintaxe {
+                Object.prototype
+            }
+        */ 
 
         class Carro {
             // cor = "Vermelho"
@@ -81,13 +85,23 @@
             }
         }
 
+        Carro.prototype.potencia = 0
+        Carro.prototype.velocidade = 0
+        Carro.prototype.velocidadeMaxima = 0
+
+        Carro.prototype.info = function() {
+            //Método
+            //this.info()
+            console.log("Potência..: " + this.potencia)
+            console.log("Velocidade: " + this.velocidade)
+            console.log("Velocidade Máxima: " + this.velocidadeMaxima)
+        }
 
         let c1 = new CarroForte(100)
-        let c2 = new carroTransporte(50)
+        let c2 = new carroTransporte()
 
         c1.setLigado = true
         c1.info()
-        c2.info()
     </script>
 </body>
 </html>
