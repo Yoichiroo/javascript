@@ -9,8 +9,72 @@
 <body>
     <script>
     /*
-    
+    O modificador static será aplicado em propriedades estáticas, onde podemos definir. A propriedade estática vai utilizar um endereço de memória fixo, estático. Ou seja, se instanciarmos uma classe ou objeto, quando temos o membro static, eles irão acessar o mesmo elemento, ou seja, o mesmo endereço de memória. Exemplo: A classe Carro abaixo é um elemento estático.
+        Para definirmos um membro static, podemos utilizar o próprio static para o mesmo. Como uma variável.  Ao criar um membro estático, podemos atribuir diversos valores para o mesmo. Ao nos referirmos à um membro estático, temos que utilizar como atributo a classe na qual o static está. 
+            Ex {
+                static alerta = true
+                Carro.alerta = false
+            }
+
+        Diferentemente das outras propriedades, o static, se mudarmos o valor da mesma para um elemento, todos que tiverem este elemento estático também irá mudar. Ou seja. não terá uma variável para cada objeto da classe, todos usarão a mesma propriedade. Também podemos usar o modificador static para métodos.
     */
+
+    class Carro {
+            // cor = "Vermelho"
+            static alerta = true
+            constructor(marca, modelo, cor) {
+                this.marca = marca
+                this.modelo = modelo
+                this.cor = cor
+                this.ligado = false
+                this.km = 0
+                this.combustivel = 10
+            }
+
+            info() {
+                console.log("Marca......: " + this.marca)
+                console.log("Modelo.....: " + this.modelo)
+                console.log("Cor........: " + this.cor)
+                console.log("Ligado.....: " + (this.ligado ? "SIM" : "NÃO"))
+                console.log("KM.........: " + this.km)
+                console.log("Combustivel: " + this.combustivel)
+                console.log("Alerta: " + (Carro.alerta? "SIM" : "NÃO"))
+                console.log("------------------------------")
+            }
+
+            ligarCarro() {
+                this.ligado = true
+            }
+
+            desligarCarro() {
+                this.ligado = false
+            }
+
+            set Comb(valor) {
+                if(valor < 0 || valor > 100) {
+                    alert("Valor inválido!")
+                } else {
+                    this.combustivel = valor
+                    console.log("Combustível alterado, valor atual: " + this.combustivel)
+                }
+            }
+
+            get valorComb() {
+                return this.combustivel
+            }
+        }
+
+        let c1 = new Carro("Honda", "HRV", "Prata")
+        let c2 = new Carro("VW", "Golf", "Branco")
+        let c3 = new Carro("GM", "Camaro", "Preto")
+        let c4 = new Carro("Ford", "Mustang", "Vermelho")
+        
+        Carro.alerta = false
+
+        c1.info()
+        c2.info()
+        c3.info()
+        c4.info()
     </script>
 </body>
 </html>
