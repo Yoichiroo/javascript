@@ -9,7 +9,25 @@
 <body>
     <script>
         /*
+        A coleção set é parecida com a coleção Map, muitos métodos são idênticos. A diferença do Map pro Set é que o Map é uma coleção de chave valor, nas quais as chaves não podem ser repetidas, ou seja, se repetirmos uma chave, o Map irá substituir. Assim como o Map, o set também substitui as chaves, porém ele trabalha com o valor, ao invés da chave em si.
+            Uma outra diferença entre ambas é que com o Map usamos o set para adicionarmos elementos.
+            No set, usamos o método .add()
         */
+
+        let meuSet = new Set([
+            1, 2, 3
+        ])
+
+        meuSet.add(4)
+        meuSet.add(5)
+        meuSet.add(6)
+
+        console.log(meuSet.size)
+        console.log("-----------------")
+        for(n of meuSet) {
+            console.log(n)
+        }
+
     </script>
 </body>
 </html>
