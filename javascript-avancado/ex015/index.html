@@ -9,8 +9,31 @@
 <body>
     <script>
         /*
-        
+        O método reduce retorna um resultado que seria um "resumo" do Array. O resumo, no caso, seria um resultado da aplicação de uma determinada função no Array. Semelhante ao map e ao filter, também aplicará a função nos elementos do array. Funciona com dois parâmetros, que no caso, serão os dois primeiros elementos do Array, a partir da segunda iteração em diante ele receberá o retorno da função aplicada ao próximo elemento.
+        Ex:
+            let num = [0, 1, 2, 3, 4, 5]
+            let soma = num.reduce((n1, n2) => {
+                console.log(n1 + " + " + n2)
+                console.log('------------------')
+                return n1 + n2 
+            })
+    
+            console.log(soma)
         */
+
+        let pessoas = [
+            {nome: "Lucas", idade: 16},
+            {nome: "Bruno", idade: 40},
+            {nome: "Cleidosvaldo", idade: 25},
+            {nome: "Glebsoneide", idade: 18},
+        ]
+
+        let nomes = pessoas.reduce((pessoa1, pessoa2) => {
+            pessoa1.push(pessoa2.nome)
+            return pessoa1
+        },[])
+
+        console.log(nomes)
     </script>
 </body>
 </html>
