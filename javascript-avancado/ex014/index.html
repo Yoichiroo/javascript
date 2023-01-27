@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método Filter</title>
+</head>
+<body>
+    <script>
+        /*
+        O método filter funciona do mesmo jeito que o método map, com adiferença que o filter faz a filtragem dos elementos e cria um Array apenas com os elementos filtrados. Podemos especificar os elementos e a filtragem com uma função. O método map aplica a função em todos os elementos, basicamente.
+        */
+
+        let num = [5, 2, 8, 15, 30, 4, 25, 18, 9]
+        let filtrados =  num.filter((numero) => {
+            return numero >= 10
+        })
+        
+        // console.log("Array: " + num)
+        // console.log("Maiores que 10: " + filtrados)
+
+        let dados = [
+            {
+                id: 15
+            },
+            {
+                id: 0
+            },
+            {id: -10},
+            {id: null},
+            {id: NaN},
+            {id: 'undefined'},
+            {id: 5.8},
+            {},
+            {id: 2},
+        ]
+
+        let validos = dados.filter((elemento) => {
+            if (typeof elemento.id == 'number' && !isNaN(elemento.id) && (elemento.id >= 0)) {
+                return true 
+            } else {
+                return false
+            }
+        })
+
+        console.log(dados)
+        console.log(validos)
+</script>
+</body>
+</html>
