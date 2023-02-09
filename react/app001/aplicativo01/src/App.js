@@ -1,10 +1,19 @@
 import React from "react"
+// const curso = "React.js"
 
 export default function App() {
+  const gitHub = () => {
+    return("Yoichiroo")
+  }
+
+  function curso() {
+    return 'React.js'
+  }
+
   return (
     <>
-      <h1>Yoichiroo</h1>
-      <p>Curso de React - Primeirio App</p>
+      <h1> {"GitHub - " + gitHub()}</h1>
+      <p>{"Curso - " + curso()}</p>
     </>
   )
 }
