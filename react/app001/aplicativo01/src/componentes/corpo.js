@@ -4,17 +4,21 @@ import Yone from "./imgs/yone.jpg"
 
 export default function corpo() {
     // const gh = 'github.com/Yoichiroo'
-    // const tt = '@yoichiroo1'
     // const crs = "Informática p/ Internet"
     const gh = () => {
         return 'github.com/Yoichiroo'
     }
-    const tt = () => {
-        return '@yoichiroo1'
-    }
+    
+    const tt = '@yoichiroo1'
+    
     const crs = () => {
         return "Informática p/Internet"
     }
+
+    const soma = (valor, valor2) => {
+        return valor + valor2
+    }
+
     return(
         <main>
             <h2>Curso de React</h2>
@@ -28,6 +32,7 @@ export default function corpo() {
                 github = {gh}  
                 twitter = {tt} 
                 curso = {crs}
+                soma = {soma}
             >
             </Dados>
         </main>
