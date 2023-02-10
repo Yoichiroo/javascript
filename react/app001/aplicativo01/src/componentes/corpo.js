@@ -29,7 +29,7 @@ export default function corpo() {
 
     return(
         <section className="caixa">
-            <Relogio/>
+            <Relogio></Relogio>
             <header>
                 <img src={Irelia} alt = "Irelia Sentinela" width="800"></img>
                 <h1 style={{color:'#f00', fontSize: '2em', fontFamily: 'Poppins'}}>Irelia Sentinela</h1>
