@@ -13,7 +13,7 @@ export default function App() {
   return (
     <>
     <Corpo></Corpo>
-    <p>Valor do StateNum em App: {num}</p>
+    <p className="caixaTexto">Valor do StateNum em App: {num}</p>
     <Numero num ={num} setNum = {setNum}></Numero>
     </>
   )

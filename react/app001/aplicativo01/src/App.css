@@ -26,3 +26,26 @@
   font-size: 2.5em;
   font-weight: bolder;
 }
+
+.caixaTexto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  background-color: rgb(50, 155, 241);
+  color: white;
+  transition: .2s;
+}
+
+button:hover {
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.226);
+  width: 110px;
+  font-weight: bolder;
+}
