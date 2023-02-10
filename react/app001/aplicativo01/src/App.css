@@ -19,4 +19,10 @@
   font-weight: bold;
   font-family: monospace;
   font-size: 2em;
+  transition: .2s;
+}
+
+.caixa a:hover {
+  font-size: 2.5em;
+  font-weight: bolder;
 }
