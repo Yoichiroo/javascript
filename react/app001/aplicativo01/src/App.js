@@ -9,7 +9,7 @@ export default function App() {
     <>
     <Topo></Topo>
     <Corpo></Corpo>
-    <Dados></Dados>
+    <Dados github = 'Yoichiroo'  twitter = '@yoichiroo1' curso = 'Informática p/ Internet'></Dados>
     </>
   )
 }
