@@ -21,14 +21,15 @@ export default function corpo() {
 
     const textoDestaque = {
         color: "#00f",
-        fontSize: "2em"
+        fontSize: "2em",
+        fontFamily: 'Poppins'
     }
 
     return(
         <main>
             <h2>Curso de React</h2>
             <p>Jogue LoL, é viciante!</p>
-            <p>Mono Yone falando aqui.</p>
+            <p className="texto">Mono Yone falando aqui.</p>
             <img src={Yone} alt="Yone Academia de Batalha" width="1000"></img>
             <h1 style ={textoDestaque}>Yone Academia de Batalha</h1>
             <h2>React é mt bom!</h2>

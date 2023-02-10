@@ -1,6 +1,7 @@
 import React from "react"
 import Topo from "./componentes/header"
 import Corpo from "./componentes/corpo"
+import './App.css'
 
 // const curso = "React.js"
 
