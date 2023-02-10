@@ -19,6 +19,11 @@ export default function corpo() {
         return valor + valor2
     }
 
+    const textoDestaque = {
+        color: "#00f",
+        fontSize: "2em"
+    }
+
     return(
         <main>
             <h2>Curso de React</h2>
