@@ -26,7 +26,7 @@ export default function corpo() {
             <p>Mono Yone falando aqui.</p>
             <img src={Yone} alt="Yone Academia de Batalha" width="1000"></img>
             <h1>Yone Academia de Batalha</h1>
-            <h2>React é mt bom vsf</h2>
+            <h2>React é mt bom!</h2>
             <Dados 
             //O atributo está carregando uma função.
                 github = {gh}  
