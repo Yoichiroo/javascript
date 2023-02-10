@@ -3,3 +3,12 @@
   font-size: 2em;
   font-family: 'Poppins';
 }
+
+.caixa {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

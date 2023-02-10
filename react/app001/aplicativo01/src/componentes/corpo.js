@@ -26,11 +26,11 @@ export default function corpo() {
     }
 
     return(
-        <main>
+        <section className="caixa">
             <h2>Curso de React</h2>
             <p>Jogue LoL, é viciante!</p>
             <p className="texto">Mono Yone falando aqui.</p>
-            <img src={Yone} alt="Yone Academia de Batalha" width="1000"></img>
+            <img src={Yone} alt="Yone Academia de Batalha" width="800"></img>
             <h1 style ={textoDestaque}>Yone Academia de Batalha</h1>
             <h2>React é mt bom!</h2>
             <Dados 
@@ -41,6 +41,6 @@ export default function corpo() {
                 soma = {soma}
             >
             </Dados>
-        </main>
+        </section>
     )
 }
