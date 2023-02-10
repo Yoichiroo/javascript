@@ -1,6 +1,7 @@
 import React from "react"
 import Dados from './dados'
 import Yone from "./imgs/yone.jpg"
+import Irelia from "./imgs/irelia.jpg"
 
 export default function corpo() {
     // const gh = 'github.com/Yoichiroo'
@@ -27,12 +28,17 @@ export default function corpo() {
 
     return(
         <section className="caixa">
+            <header>
+                <img src={Irelia} alt = "Irelia Sentinela" width="800"></img>
+                <h1 style={{color:'#f00', fontSize: '2em', fontFamily: 'Poppins'}}>Irelia Sentinela</h1>
+            </header>
             <h2>Curso de React</h2>
             <p>Jogue LoL, é viciante!</p>
             <p className="texto">Mono Yone falando aqui.</p>
             <img src={Yone} alt="Yone Academia de Batalha" width="800"></img>
             <h1 style ={textoDestaque}>Yone Academia de Batalha</h1>
             <h2>React é mt bom!</h2>
+            <a href="https://github.com/Yoichiroo" target={"_blank"}>Meu GitHub</a>
             <Dados 
             //O atributo está carregando uma função.
                 github = {gh}  

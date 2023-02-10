@@ -12,3 +12,11 @@
   align-items: center;
   text-align: center;
 }
+
+.caixa a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 2em;
+}
