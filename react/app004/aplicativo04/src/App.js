@@ -20,12 +20,15 @@ export default function App() {
   }
 
   const mudarCor = () => {
-
+    setCor(cor+1)
+    if (cor > 2) {
+      setCor(1)
+    }
   }
 
   return (
     <>
-    <h1 style={retornarCor()}>Yoichiroo</h1>
+    <h1 style={retornarCor(cor)}>Yoichiroo</h1>
     <button onClick={() => mudarCor()}>Mudar Cor</button>
     </>
   )
