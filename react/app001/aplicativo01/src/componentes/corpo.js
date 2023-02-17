@@ -3,6 +3,7 @@ import Dados from './dados'
 import Yone from "./imgs/yone.jpg"
 import Irelia from "./imgs/irelia.jpg"
 import Relogio from '../componentes/relogio'
+import PrimeiraPag from '../componentes/primeira'
 
 export default function corpo() {
     // const gh = 'github.com/Yoichiroo'
@@ -29,6 +30,7 @@ export default function corpo() {
 
     return(
         <section className="caixa">
+            <PrimeiraPag></PrimeiraPag>
             <Relogio></Relogio>
             <header>
                 <img src={Irelia} alt = "Irelia Sentinela" width="800"></img>
