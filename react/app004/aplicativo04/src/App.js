@@ -10,11 +10,11 @@ export default function App() {
   const azul = {color: "blue"}
   
   const retornarCor = (c) => {
-    if (c == 1) {
+    if (c === 1) {
       return vermelho
-    } else if (c == 2) {
+    } else if (c === 2) {
       return verde
-    } else {
+    } else if (c === 3) {
       return azul
     }
   }
@@ -25,6 +25,8 @@ export default function App() {
       setCor(1)
     }
   }
+
+  setInterval(mudarCor, 1000)
 
   return (
     <>
