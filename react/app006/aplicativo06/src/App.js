@@ -13,12 +13,13 @@ export default function App() {
     <input type = "text" name = "uNome" id = "uNome"  placeholder= "João da Silva" value = {nome} onChange = {(elemento) => setNome(elemento.target.value)} ></input>
     <p>Nome digitado: {nome}</p>
     <label>Selecione um carro</label>
-    <select values = {carro}>
+    <select values = {carro} onChange = {(elemento) => setCarro(elemento.target.value)}>
       <option value = "HRV">HRV</option>
       <option value = "Golf">Golf</option>
       <option value = "Cruze">Cruze</option>
       <option value = "Argo">Argo</option>
     </select>
+    <p>Carro selecionado: {carro}</p>
     </>
   )
 }
