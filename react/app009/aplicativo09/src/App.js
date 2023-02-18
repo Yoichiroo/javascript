@@ -1,4 +1,5 @@
 import React from "react"
+import Caixa from "./componentes/caixa"
 
 export default function App() {
   
@@ -6,10 +7,7 @@ export default function App() {
 
   return(
     <>
-    <div>
-      <h1>Contenção em React</h1>
-      <p>Curso de React</p>
-    </div>
+    <Caixa></Caixa>
     </>
   )
 }
