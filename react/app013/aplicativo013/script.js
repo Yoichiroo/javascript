@@ -1,6 +1,6 @@
 function carro() {
     let velocidadeMaxima = 200
-    document.write(this)
+    console.log("Cor: " + this.cor + " Marca: " + this.marca + " Modelo: " + this.modelo)
 }
 
 let detalhes =  {
@@ -9,4 +9,6 @@ let detalhes =  {
     modelo: "Golf"
 }
 
-carro()
+let ligarDetalhesCarro = carro.bind(detalhes)
+
+ligarDetalhesCarro()
