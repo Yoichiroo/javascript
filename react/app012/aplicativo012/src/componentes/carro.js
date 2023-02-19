@@ -13,7 +13,13 @@ export default class Carro extends React.Component {
     
     ligarDesligar() {
         // NÃO RENDERIZA NA PÁGINA this.state.ligado = true
-        this.setState({ligado: !this.state.ligado})
+        //this.setState({ligado: !this.state.ligado})
+        this.setState(
+            (state) => ({
+                ligado: !this.state.ligado
+            })
+        )
+    
     }
 
     render() {
