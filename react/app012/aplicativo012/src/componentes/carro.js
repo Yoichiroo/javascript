@@ -35,7 +35,7 @@ export default class Carro extends React.Component {
                 <h2>Meu Carro</h2>
                 <p>Modelo: <strong>{this.modelo}</strong></p>
                 <p>Ligado: <strong>{this.state.ligado ? "Sim" : "Não"}</strong></p>
-                <p>Vel. Atual: <strong>{this.state.velocidadeAtual}</strong></p>
+                <p>Vel. Atual: <strong>{this.state.velocidadeAtual} Km/h</strong></p>
                 <button onClick={() => this.ligarDesligar()}>{this.state.ligado ? "Desligar Carro" : "Ligar Carro"}</button>
                 <button onClick={() => this.acelerar()}>Acelerar</button>
             </div>
