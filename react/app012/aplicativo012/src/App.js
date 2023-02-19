@@ -6,7 +6,7 @@ export default function App() {
   return (
     <>
     <h1>Componentes de classe</h1>
-    <Classe></Classe>
+    <Classe github = "Yoichiroo"></Classe>
     </>
   )
 }

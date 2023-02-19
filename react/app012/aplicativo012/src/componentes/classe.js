@@ -1,11 +1,19 @@
 import React from "react"
 
-class Classe extends React.Component {
+export default class Classe extends React.Component {
+    
+    constructor(props) {
+        super(props)
+    }
+    
     render() {
         return(
-            <p>Primeiro componente de Classe</p>
+            <>
+            <div>
+                <h2>Primeiro componente de Classe</h2>
+                <p>Github: <strong>{this.props.github}</strong></p>
+            </div>
+            </>
         )
     }
 }
-
-export default  Classe
