@@ -1,5 +1,6 @@
 import React from 'react'
 import Classe from './componentes/classe'
+import Carro from './componentes/carro'
 
 export default function App() {
 
@@ -7,6 +8,7 @@ export default function App() {
     <>
     <h1>Componentes de classe</h1>
     <Classe github = "Yoichiroo" curso = "React"></Classe>
+    <Carro></Carro>
     </>
   )
 }
