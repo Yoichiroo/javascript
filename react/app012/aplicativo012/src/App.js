@@ -7,7 +7,7 @@ export default function App() {
   return (
     <>
     <h1>Componentes de classe</h1>
-    <Classe github = "Yoichiroo" curso = "React"></Classe>
+    <Classe github = "Yoichiroo" curso = "React"></Classe><hr></hr>
     <Carro></Carro>
     </>
   )

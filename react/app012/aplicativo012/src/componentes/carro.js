@@ -11,9 +11,9 @@ export default class Carro extends React.Component {
         }
     }
     
-    ligar() {
+    ligarDesligar() {
         // NÃO RENDERIZA NA PÁGINA this.state.ligado = true
-        this.setState({ligado: true})
+        this.setState({ligado: !this.state.ligado})
     }
 
     render() {
@@ -24,7 +24,7 @@ export default class Carro extends React.Component {
                 <p>Modelo: <strong>{this.modelo}</strong></p>
                 <p>Ligado: <strong>{this.state.ligado ? "Sim" : "Não"}</strong></p>
                 <p>Vel. Atual: <strong>{this.state.velocidadeAtual}</strong></p>
-                <button onClick={() => this.ligar()}>Ligar Carro</button>
+                <button onClick={() => this.ligarDesligar()}>{this.state.ligado ? "Desligar Carro" : "Ligar Carro"}</button>
             </div>
             </>
         )
