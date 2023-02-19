@@ -8,7 +8,7 @@ export default function App() {
     <>
     <h1>Componentes de classe</h1>
     <Classe github = "Yoichiroo" curso = "React"></Classe><hr></hr>
-    <Carro></Carro>
+    <Carro fator = {10}></Carro>
     </>
   )
 }
