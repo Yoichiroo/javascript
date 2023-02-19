@@ -29,6 +29,10 @@ export default class Carro extends React.Component {
         )
     }
 
+    componentDidMount() {
+        console.log("O carro foi renderizado")
+    }
+
     render() {
         return(
             <>
