@@ -11,7 +11,7 @@ export default class Carro extends React.Component {
         }
         this.ldBind = this.ligarDesligar.bind(this)
     }
-    
+
     ligarDesligar() {
         // NÃO RENDERIZA NA PÁGINA this.state.ligado = true
         //     this.setState(
@@ -31,6 +31,14 @@ export default class Carro extends React.Component {
 
     componentDidMount() {
         console.log("O carro foi renderizado")
+    }
+
+    componentDidUpdate() {
+        console.log("O carro foi atualizado")
+    }
+
+    componentWillUnmount() {
+        console.log("O carro foi removido")
     }
 
     render() {
