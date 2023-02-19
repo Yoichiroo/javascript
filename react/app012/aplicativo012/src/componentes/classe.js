@@ -12,6 +12,7 @@ export default class Classe extends React.Component {
             <div>
                 <h2>Primeiro componente de Classe</h2>
                 <p>Github: <strong>{this.props.github}</strong></p>
+                <p>Curso: <strong>{this.props.curso}</strong></p>
             </div>
             </>
         )
