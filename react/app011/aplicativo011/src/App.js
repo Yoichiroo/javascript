@@ -18,8 +18,12 @@ export default function App() {
 
   return(
     <>
-      <label>Digite um Nome: </label>
-      <input type="text" value={nome} onChange={(elemento) => setNome(elemento.target.value)}></input>
+    <h1>LocalStorage</h1>
+      <label>Digite um Nome: </label> <br></br>
+      <input type="text" value={nome} onChange={(elemento) => setNome(elemento.target.value)}></input> <br></br>
+      <button onClick={() => armazenar('LSnome', nome)}>Gravar Nome</button>
+      <button onClick={() => consultar("LSnome")}>Consultar Nome</button>
+      <button onClick={() => apagar("LSnome")}>Apagar Nome</button>
     </>
   )
 }
