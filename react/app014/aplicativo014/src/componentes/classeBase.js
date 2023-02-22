@@ -6,9 +6,27 @@ export default class classeBase extends React.Component {
         //Instruções básicas do construtor
         this.state = {
             github: "Yoichiroo",
-            curso: 'React'
+            curso: 'React',
+            ativo: true,
+            nome: this.props.nomeAluno
         }
+        this.status = this.props.status
     }
 
-    return ()
+    ativarDesativar() {
+        this.setState(
+            state => ({
+                ativo: !state.ativo
+            })
+            )
+    }
+
+}
+
+render() {
+    return(
+        <>
+        <h1>Componente de Classe</h1>
+        </>
+    )
 }
