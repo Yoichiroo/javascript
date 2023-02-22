@@ -1,6 +1,5 @@
 * {
   font-family: "Poppins";
-  margin: 10px;
   padding: 5px;
 }
 
@@ -9,4 +8,13 @@ table, tr, th, td {
   text-align: center;
   border: 1px solid black;
   border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(177, 175, 175, 0.397);
+}
+
+thead {
+  background-color: black;
+  color: white;
 }
