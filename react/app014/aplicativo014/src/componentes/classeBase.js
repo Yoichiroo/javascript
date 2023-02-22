@@ -11,22 +11,30 @@ export default class classeBase extends React.Component {
             nome: this.props.nomeAluno
         }
         this.status = this.props.status
+        let AD = this.ativarDesativar.bind(this)
     }
 
     ativarDesativar() {
-        this.setState(
-            state => ({
-                ativo: !state.ativo
-            })
-            )
+        this.setState(state => ({ativo: !state.ativo}))
     }
 
-}
+    componentDidMount() {
+        console.log("O componente foi criado")
+    }
 
-render() {
-    return(
-        <>
-        <h1>Componente de Classe</h1>
-        </>
-    )
+    componentDidUpdate() {
+        console.log("O componente foi atualizado")
+    }
+
+    componentWillUnmount() {
+        console.log("O componente foi removido")
+    }
+    
+    render() {
+        return(
+            <>
+            <h1>Componente de Classe</h1>
+            </>
+        )
+    }
 }
