@@ -40,11 +40,29 @@ const tabelaExibicaoIMC = () => {
   )
 }
 
+const userPeso = (peso, sPeso) => {
+  return(
+    <div>
+      <input type="text" value={peso} onChange={(elemento) => sPeso(elemento.target.value)}></input>
+    </div>
+  )
+}
+
+const userAltura = (altura, sAltura) => {
+  return(
+    <div>
+      <input type="text" value={altura} onChange={(elemento) => sAltura(elemento.target.value)}></input>
+    </div>
+  )
+}
+
 export default function App() {
+  
+
   
   return(
     <>
-    
+    {tabelaExibicaoIMC()}
     </>
   )
 }
