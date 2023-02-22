@@ -6,8 +6,18 @@ export default function App() {
   
   const [pagina, setPagina] = useState(0)
 
-  const linksPaginas = () => {
+  useEffect(() => {
+    const url = window.location.href
+    const res = url.split("?")
+    setPagina(res[1])
+  })
 
+  const linksPaginas = (numPG) => {
+    if (numPG == 1) {
+      window.open("http://localhost:3000?1", '_blank')
+    } else if (numPG == 2) {
+      window.open("http://localhost:3000?2", '_blank')
+    }
   }
 
   const retornarPagina = () => {
