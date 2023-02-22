@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Globais from "./globais"
 
 export default function App() {

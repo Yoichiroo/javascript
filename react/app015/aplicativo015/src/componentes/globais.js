@@ -1,4 +1,3 @@
-import React from "react"
 
 export default class Globais{
     static github = "Yoichiroo"

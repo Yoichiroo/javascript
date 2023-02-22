@@ -21,7 +21,9 @@ export default function App() {
     <p>{'Curso: ' + Globais.curso}</p>
     <p>{'Ano: ' + Globais.ano}</p>
     <hr></hr>
-    <input type="text" value = {""} onChange = {""}></input>
+    <input type="text" size = {50} value = {resumo} onChange = {(elemento) => setResumo(elemento.target.value)}></input> <br></br>
+    <button onClick={() => gravarResumo()}>Gravar Resumo</button>
+    <button onClick={() => verResumo()}>Ver Resumo</button>
     </> 
   )
 }
