@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
+import Classe from './componentes/classe'
+import Carro from './componentes/carro'
 
-function App() {
+export default function App() {
+
+  const [carro, setCarro] = useState(true)
+  const mostrarOcultarCarro = () => {
+    setCarro(!carro)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <h1>Componentes de classe</h1>
+    <Classe github = "Yoichiroo" curso = "React"></Classe><hr></hr>
+    {carro ? <Carro fator = {10}></Carro> : "" }
+    <button onClick={() => mostrarOcultarCarro()}>Ocultar</button>
+    </>
+  )
 }
-
-export default App;
