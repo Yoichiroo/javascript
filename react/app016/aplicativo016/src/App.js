@@ -4,11 +4,10 @@ import Pag2 from "./componentes/pag002"
 
 export default function App() {
   
-  
-
   return(
     <>
-
+      <button onClick={""}>Página 1</button>
+      <button onClick={""}>Página 2</button>
     </>
   )
 }
