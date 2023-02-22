@@ -1,38 +1,22 @@
-.App {
-  text-align: center;
+* {
+    font-family: "Poppins";
+    margin: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+table.Tabela, th, tr, td {
+    width: 60vw;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+tr.ParImpar:nth-child(odd) { background-color: rgba(128, 128, 128, 0.404); }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+thead {
+    font-weight: normal;
+    position: sticky;
+    top: -1px;
+    background-color: black;
+    color: white;
 }
