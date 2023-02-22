@@ -10,7 +10,41 @@ const carros = [
 ]
 
 const tabelaCarros = (cat) => {
+  return (
+    <table className="Tabela">
 
+      <thead>
+        <tr>
+          <th>Categoria</th>
+          <th>Preço</th>
+          <th>Modelo</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {linhas(cat)}
+      </tbody>
+
+    </table>
+  )
+}
+
+const linhas = (cat) => {
+  const li = [] 
+  carros.forEach(
+    (carro) => {
+      if (carro.categoria.toUpperCase() == cat.toUpperCase() || cat.toUpperCase() == "") {
+        li.push(
+          <tr>
+            <td>{carro.categoria}</td>
+            <td>{carro.preco}</td>
+            <td>{carro.modelo}</td>
+          </tr>
+        )
+      }
+    }
+  )
+  return li
 }
 
 export default function App() {
