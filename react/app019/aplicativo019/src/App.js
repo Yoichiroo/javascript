@@ -41,6 +41,12 @@ export default function App() {
       setOperado(false)
       return
     }
+    try {
+      const r = eval(valTela)
+      setAcumulador(resultado)
+      setResultado(resultado)
+      setOperado(true)
+    }
   }
 
 
