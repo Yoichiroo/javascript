@@ -1,9 +1,14 @@
 import React from "react"
 
-export default function resIMC(props) {
-    return (
-        <div>
-            <p>Resultado: {props.res.toFixed(2)}</p>
-        </div>
-    )
+export default class resIMC extends React.Component{
+    constructor() {
+        super()
+    }
+    render() {
+        return (
+            <div>
+                <p>Resultado: {this.props.res.toFixed(2)}</p>
+            </div>
+        )
+    }
 }
