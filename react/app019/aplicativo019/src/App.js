@@ -5,14 +5,32 @@ export default function App() {
   const [valTela, setValTela] = useState("")
   const [resultado, setResultado] = useState(0)
   const [acumulador, setAcumulador] = useState(0)
-  const [operacao, setOperacao] = useState(false)
+  const [operado, setOperado] = useState(false)
 
+  //Funções
+  const addDigitoTela = (digito) => {
+    if((digito == '+' || digito == '-' || digito == '*' || digito == "/") && operado) {
+      console.log("+-*/")
+      setOperado(false)
+      setValTela(resultado + digito)
+      return
+    }
+  }
+
+
+  //Componentes
   const Tela = (valor, res) => {
     return(
-      <div>
-        <span>{valor}</span>
-        <span>{res}</span>
+      <div style = {cssTela}>
+        <span style = {cssTelaOperacao}>{valor}</span>
+        <span style = {cssTelaResultado}>{res}</span>
       </div>
+    )
+  }
+  
+  const btn = (label, onClick) => {
+    return(
+      <button style = {cssBtn} onClick = {onClick}></button>
     )
   }
 
@@ -38,6 +56,19 @@ export default function App() {
     fontSize: 50,  
     color: "#fff"
   }
+
+  const cssBtn = {
+    fontSize: 30,
+    height: 75,
+    width: 75,
+    padding: 20,
+    backgroundColor: "#000",
+    color: "#fff",
+    borderColor: "#000",
+    textAlign: "center",
+    outline: "none"
+  }
+
 
   return(
     <>
