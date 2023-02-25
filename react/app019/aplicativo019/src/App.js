@@ -15,6 +15,13 @@ export default function App() {
       setValTela(resultado + digito)
       return
     }
+    if(operado) {
+      setValTela(digito),
+      setOperado(false)
+      return
+    }
+    const valorDigitadoTela = valTela + digito 
+    setValTela(valorDigitadoTela)
   }
 
 
