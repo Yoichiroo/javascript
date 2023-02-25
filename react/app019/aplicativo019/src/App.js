@@ -16,12 +16,25 @@ export default function App() {
       return
     }
     if(operado) {
-      setValTela(digito),
+      setValTela(digito)
       setOperado(false)
       return
     }
     const valorDigitadoTela = valTela + digito 
     setValTela(valorDigitadoTela)
+  }
+
+  const limparTela = () => {
+    setOperado(false)
+    setValTela("")
+    setResultado(0)
+    setAcumulador(0)
+    return
+  }
+
+  //Verficação de Operação
+  const Operacao = (op) => {
+
   }
 
 
