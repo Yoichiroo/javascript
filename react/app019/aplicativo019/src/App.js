@@ -34,7 +34,13 @@ export default function App() {
 
   //Verficação de Operação
   const Operacao = (op) => {
-
+    if(op == "bs") {
+      let vTela = valTela
+      vTela = vTela.substring(0, (vTela.length - 1))
+      setValTela(vTela)
+      setOperado(false)
+      return
+    }
   }
 
 
