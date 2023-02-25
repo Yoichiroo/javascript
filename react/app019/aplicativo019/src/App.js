@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-
+import "./App.css"
 export default function App() {
   
   const [valTela, setValTela] = useState("")
@@ -44,8 +44,8 @@ export default function App() {
     try {
       //Cálculo
       const r = eval(valTela)
-      setAcumulador(resultado)
-      setResultado(resultado)
+      setAcumulador(r)
+      setResultado(r)
       setOperado(true)
     } catch {
       setResultado("ERRO")
@@ -65,7 +65,7 @@ export default function App() {
   
   const btn = (label, onClick) => {
     return(
-      <button style = {cssBtn} onClick = {onClick}></button>
+      <button style = {cssBtn} className="cssBotoes" onClick = {onClick}>{label}</button>
     )
   }
 
@@ -73,17 +73,19 @@ export default function App() {
 
   const cssContainer = {
     display: "flex",
-    justifyContent: "flex-start",
+    margin: "20px auto",
     alignItems: "center",
+    justifyContent: "center",
     flexDirection: "column",
-    width: 300,
+    width: 400,
     border: "1px solid black",
+    borderRadius: "30px 30px 0px 0px"
   }
 
   const cssBotoes = {
     flexDirection: "row",
     flexWrap: "wrap",
-    color: "#fff"
+    color: "#fff",
   }
 
   const cssTela = {
@@ -91,7 +93,7 @@ export default function App() {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "flex-start",
-    window: 260,
+    width: 360,
     paddingLeft: 20,
     paddingRight: 20,
     backgroundColor: "#444"
@@ -111,20 +113,21 @@ export default function App() {
   const cssBtn = {
     fontSize: 30,
     height: 75,
-    width: 75,
+    width: 100,
     padding: 20,
     backgroundColor: "#000",
     color: "#fff",
     borderColor: "#000",
     textAlign: "center",
-    outline: "none"
+    outline: "none",
+    transition: ".2s"
   }
 
 
   return(
     <>
       <div style={cssContainer}>
-        <h1>Calculadora Matemática Simples</h1>
+        <h3>Calculadora Matemática Simples</h3>
         {Tela(valTela, resultado)}
         <div style={cssBotoes}>
           {btn("AC", limparTela)}
@@ -137,6 +140,7 @@ export default function App() {
           {btn("*", () => addDigitoTela("*"))}
           {btn("4", () => addDigitoTela("4"))}
           {btn("5", () => addDigitoTela("5"))}
+          {btn("6", () => addDigitoTela("6"))}
           {btn("-", () => addDigitoTela("-"))}
           {btn("1", () => addDigitoTela("1"))}
           {btn("2", () => addDigitoTela("2"))}
