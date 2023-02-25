@@ -42,10 +42,13 @@ export default function App() {
       return
     }
     try {
+      //Cálculo
       const r = eval(valTela)
       setAcumulador(resultado)
       setResultado(resultado)
       setOperado(true)
+    } catch {
+      setResultado("ERRO")
     }
   }
 
