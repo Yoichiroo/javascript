@@ -35,7 +35,8 @@ export default function App() {
   }
 
   const cssTelaResultado = {
-    
+    fontSize: 50,  
+    color: "#fff"
   }
 
   return(
