@@ -70,12 +70,28 @@ export default function App() {
   }
 
   //Estilos
+
+  const cssContainer = {
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    flexDirection: "column",
+    width: 300,
+    border: "1px solid black",
+  }
+
+  const cssBotoes = {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    color: "#fff"
+  }
+
   const cssTela = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "flex-start",
-    width: 260,
+    window: 260,
     paddingLeft: 20,
     paddingRight: 20,
     backgroundColor: "#444"
@@ -107,7 +123,31 @@ export default function App() {
 
   return(
     <>
-
+      <div style={cssContainer}>
+        <h1>Calculadora Matemática Simples</h1>
+        {Tela(valTela, resultado)}
+        <div style={cssBotoes}>
+          {btn("AC", limparTela)}
+          {btn("(", () => addDigitoTela("("))}
+          {btn(")", () => addDigitoTela(")"))}
+          {btn("/", () => addDigitoTela("/"))}
+          {btn("7", () => addDigitoTela("7"))}
+          {btn("8", () => addDigitoTela("8"))}
+          {btn("9", () => addDigitoTela("9"))}
+          {btn("*", () => addDigitoTela("*"))}
+          {btn("4", () => addDigitoTela("4"))}
+          {btn("5", () => addDigitoTela("5"))}
+          {btn("-", () => addDigitoTela("-"))}
+          {btn("1", () => addDigitoTela("1"))}
+          {btn("2", () => addDigitoTela("2"))}
+          {btn("3", () => addDigitoTela("3"))}
+          {btn("+", () => addDigitoTela("+"))}
+          {btn("0", () => addDigitoTela("0"))}
+          {btn(".", () => addDigitoTela("."))}
+          {btn("<=", () => Operacao("bs"))}
+          {btn("=", () => Operacao("="))}
+        </div>
+      </div>
     </>
   )
 }
